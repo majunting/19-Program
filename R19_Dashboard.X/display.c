@@ -365,7 +365,7 @@ void display_speed(int speed) {
 
 void display_brake_bias(int bias) {
     cmd(COLOR_RGB(255, 255, 255));
-    cmd_number(bias_value_x, bias_value_y, LARGE_FONT_SIZE, 0, bias);
+    if(bias < 100)    cmd_number(bias_value_x, bias_value_y, LARGE_FONT_SIZE, 0, bias);
 }
 
 void display_rpm(int rpm) {   

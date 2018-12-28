@@ -21085,7 +21085,7 @@ void display_speed(int speed) {
 
 void display_brake_bias(int bias) {
     cmd(((4UL<<24)|(((255)&255UL)<<16)|(((255)&255UL)<<8)|(((255)&255UL)<<0)));
-    cmd(4294967086UL);wr16(1081344UL +cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL +cmd_offset, 236);cmd_incrementn(2);wr16(1081344UL +cmd_offset, 30);cmd_incrementn(2);wr16(1081344UL +cmd_offset, 0);cmd_incrementn(2);cmd(bias);
+    if(bias < 100) cmd(4294967086UL);wr16(1081344UL +cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL +cmd_offset, 236);cmd_incrementn(2);wr16(1081344UL +cmd_offset, 30);cmd_incrementn(2);wr16(1081344UL +cmd_offset, 0);cmd_incrementn(2);cmd(bias);
 }
 
 void display_rpm(int rpm) {

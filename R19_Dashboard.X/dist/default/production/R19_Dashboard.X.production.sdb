@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F46K80 ]
 [d frameptr 4065 ]
-"3 F:\19 Documents\19 Program\R19_Dashboard.X\display.c
+"3 F:\19 Documents\19 Program\repo\R19_Dashboard.X\display.c
 [v _display display `(v  1 e 1 0 ]
 "21
 [v _display_start display_start `(v  1 e 1 0 ]
@@ -79,7 +79,7 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "10 F:\Microchip\XC8\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"8 F:\19 Documents\19 Program\R19_Dashboard.X\FT800.c
+"8 F:\19 Documents\19 Program\repo\R19_Dashboard.X\FT800.c
 [v _host_command host_command `(v  1 e 1 0 ]
 "16
 [v _wr8 wr8 `(v  1 e 1 0 ]
@@ -97,13 +97,13 @@
 [v _cmd cmd `(v  1 e 1 0 ]
 "143
 [v _FT800_Init FT800_Init `T(v  1 e 1 0 ]
-"27 F:\19 Documents\19 Program\R19_Dashboard.X\main.c
+"27 F:\19 Documents\19 Program\repo\R19_Dashboard.X\main.c
 [v _wait2secs wait2secs `(v  1 e 1 0 ]
 "31
 [v _refresh refresh `(v  1 e 1 0 ]
 "42
 [v _main main `(v  1 e 1 0 ]
-"63 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/ecan.c
+"63 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/ecan.c
 [v _ECAN_Initialize ECAN_Initialize `(v  1 e 1 0 ]
 "239
 [v _CAN_receive CAN_receive `(uc  1 e 1 0 ]
@@ -113,21 +113,21 @@
 [v _convertReg2StandardCANid convertReg2StandardCANid `(ul  1 e 4 0 ]
 "397
 [v _convertCANid2Reg convertCANid2Reg `(v  1 e 1 0 ]
-"51 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/interrupt_manager.c
+"51 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
 "57
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
-"111 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/mcc.c
+"111 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "123
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"52 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/pin_manager.c
+"52 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"63 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/spi.c
+"63 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/spi.c
 [v _SPI_Initialize SPI_Initialize `(v  1 e 1 0 ]
 "77
 [v _SPI_Exchange8bit SPI_Exchange8bit `(uc  1 e 1 0 ]
-"66 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/tmr0.c
+"66 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "95
 [v _TMR0_StartTimer TMR0_StartTimer `(v  1 e 1 0 ]
@@ -139,7 +139,7 @@
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 "158
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
-"63 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/tmr1.c
+"63 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 "95
 [v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
@@ -968,32 +968,32 @@
 "37236
 "37236
 [v _INTCONbits INTCONbits `VES1380  1 e 1 @4082 ]
-"6 F:\19 Documents\19 Program\R19_Dashboard.X\FT800.c
+"6 F:\19 Documents\19 Program\repo\R19_Dashboard.X\FT800.c
 [v _cmd_offset cmd_offset `us  1 e 2 0 ]
 [s S720 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
-"19 F:\19 Documents\19 Program\R19_Dashboard.X\main.c
+"19 F:\19 Documents\19 Program\repo\R19_Dashboard.X\main.c
 [u S732 . 14 `S720 1 frame 14 0 `[14]uc 1 array 14 0 ]
 [v _canMessage canMessage `S732  1 e 14 0 ]
 "20
 [v _refresh_screen refresh_screen `a  1 e 1 0 ]
-"57 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/tmr0.c
+"57 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/tmr0.c
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
 "59
 [v _timer0ReloadVal timer0ReloadVal `VEus  1 e 2 0 ]
-"56 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/tmr1.c
+"56 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
 "57
 [v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
-"42 F:\19 Documents\19 Program\R19_Dashboard.X\main.c
+"42 F:\19 Documents\19 Program\repo\R19_Dashboard.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 [s S1948 . 22 `i 1 current 2 0 `i 1 current_number 2 2 `i 1 current_int 2 4 `i 1 current_dec 2 6 `i 1 last 2 8 `i 1 last_int 2 10 `i 1 last_dec 2 12 `i 1 best 2 14 `i 1 best_number 2 16 `i 1 best_int 2 18 `i 1 best_dec 2 20 ]
 "43
-[v main@lap_time lap_time `S1948  1 a 22 56 ]
+[v main@lap_time lap_time `S1948  1 a 22 57 ]
 "46
 [v main@message message `[20]uc  1 a 20 0 ]
 "47
-[v main@tp tp `i  1 a 2 54 ]
+[v main@tp tp `i  1 a 2 55 ]
 "49
 [v main@etc etc `i  1 a 2 52 ]
 "48
@@ -1015,6 +1015,8 @@
 "47
 [v main@bias bias `i  1 a 2 24 ]
 [v main@oilP oilP `i  1 a 2 22 ]
+"53
+[v main@bspd_flag bspd_flag `a  1 a 1 54 ]
 "45
 [v main@radio radio `a  1 a 1 33 ]
 [v main@clutch clutch `a  1 a 1 30 ]
@@ -1027,14 +1029,14 @@
 [v main@F12754 F12754 `S1948  1 s 22 F12754 ]
 "45
 [v main@F12762 F12762 `[20]uc  1 s 20 F12762 ]
-"190
+"194
 } 0
 "27
 [v _wait2secs wait2secs `(v  1 e 1 0 ]
 {
 "29
 } 0
-"165 F:\19 Documents\19 Program\R19_Dashboard.X\display.c
+"165 F:\19 Documents\19 Program\repo\R19_Dashboard.X\display.c
 [v _display_status display_status `(v  1 e 1 0 ]
 {
 [v display_status@launch launch `a  1 a 1 wreg ]
@@ -1136,7 +1138,7 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 4 ]
 "53
 } 0
-"277 F:\19 Documents\19 Program\R19_Dashboard.X\display.c
+"277 F:\19 Documents\19 Program\repo\R19_Dashboard.X\display.c
 [v _display_oilTemp display_oilTemp `(v  1 e 1 0 ]
 {
 [v display_oilTemp@temp temp `i  1 p 2 24 ]
@@ -1200,7 +1202,7 @@
 [v display_battery@volts volts `i  1 p 2 24 ]
 "310
 } 0
-"43 F:\19 Documents\19 Program\R19_Dashboard.X\FT800.c
+"43 F:\19 Documents\19 Program\repo\R19_Dashboard.X\FT800.c
 [v _wr8s wr8s `(uc  1 e 1 0 ]
 {
 "50
@@ -1221,7 +1223,7 @@
 [v strlen@s s `*.32Cuc  1 p 2 2 ]
 "26
 } 0
-"126 F:\19 Documents\19 Program\R19_Dashboard.X\FT800.c
+"126 F:\19 Documents\19 Program\repo\R19_Dashboard.X\FT800.c
 [v _cmd cmd `(v  1 e 1 0 ]
 {
 [v cmd@command command `ul  1 p 4 16 ]
@@ -1281,22 +1283,22 @@
 [v ___flge@ff2 ff2 `d  1 p 4 20 ]
 "19
 } 0
-"143 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/tmr1.c
+"143 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/tmr1.c
 [v _TMR1_Reload TMR1_Reload `(v  1 e 1 0 ]
 {
 "148
 } 0
-"101 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/tmr0.c
+"101 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/tmr0.c
 [v _TMR0_StopTimer TMR0_StopTimer `(v  1 e 1 0 ]
 {
 "105
 } 0
-"111 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/mcc.c
+"111 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "121
 } 0
-"63 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/tmr1.c
+"63 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 {
 "93
@@ -1312,7 +1314,7 @@
 [v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
 "185
 } 0
-"66 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/tmr0.c
+"66 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
 "93
@@ -1328,32 +1330,32 @@
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
 "156
 } 0
-"63 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/spi.c
+"63 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/spi.c
 [v _SPI_Initialize SPI_Initialize `(v  1 e 1 0 ]
 {
 "75
 } 0
-"52 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/pin_manager.c
+"52 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "88
 } 0
-"123 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/mcc.c
+"123 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "133
 } 0
-"51 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/interrupt_manager.c
+"51 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
 {
 "55
 } 0
-"63 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/ecan.c
+"63 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/ecan.c
 [v _ECAN_Initialize ECAN_Initialize `(v  1 e 1 0 ]
 {
 "150
 } 0
-"143 F:\19 Documents\19 Program\R19_Dashboard.X\FT800.c
+"143 F:\19 Documents\19 Program\repo\R19_Dashboard.X\FT800.c
 [v _FT800_Init FT800_Init `T(v  1 e 1 0 ]
 {
 "198
@@ -1396,7 +1398,7 @@
 [v host_command@command command `uc  1 a 1 3 ]
 "14
 } 0
-"77 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/spi.c
+"77 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/spi.c
 [v _SPI_Exchange8bit SPI_Exchange8bit `(uc  1 e 1 0 ]
 {
 [v SPI_Exchange8bit@data data `uc  1 a 1 wreg ]
@@ -1405,7 +1407,7 @@
 [v SPI_Exchange8bit@data data `uc  1 a 1 2 ]
 "89
 } 0
-"239 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/ecan.c
+"239 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/ecan.c
 [v _CAN_receive CAN_receive `(uc  1 e 1 0 ]
 {
 "240
@@ -1450,12 +1452,12 @@
 [v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 10 ]
 "383
 } 0
-"57 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/interrupt_manager.c
+"57 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
 {
 "72
 } 0
-"160 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/tmr1.c
+"160 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/tmr1.c
 [v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
 {
 "172
@@ -1470,12 +1472,12 @@
 {
 "190
 } 0
-"31 F:\19 Documents\19 Program\R19_Dashboard.X\main.c
+"31 F:\19 Documents\19 Program\repo\R19_Dashboard.X\main.c
 [v _refresh refresh `(v  1 e 1 0 ]
 {
 "33
 } 0
-"134 F:\19 Documents\19 Program\R19_Dashboard.X\mcc_generated_files/tmr0.c
+"134 F:\19 Documents\19 Program\repo\R19_Dashboard.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 {
 "151

@@ -20847,6 +20847,7 @@ void main(void) {
     int BSPD_counter = 0;
     int bspd = 0;
     int brake_p = 0;
+    _Bool bspd_flag = 0;
     wait2secs();
 
 
@@ -20888,7 +20889,7 @@ void main(void) {
 
     wait2secs();
     SSPCON1bits.SSPM = 0b0001;
-# 102 "main.c"
+# 103 "main.c"
     display(rpm, oilP, gasP, fuel, tp, bspd, etc, speed, gear, engTemp, oilTemp, battVolts);
 
 
@@ -20938,15 +20939,18 @@ void main(void) {
             }
         }
         if(refresh_screen) {
-            if(tp > 21 && brake_p > 1.44) {
-                BSPD_counter++;
-                bspd = 1;
+            if(!bspd_flag) {
+                if(tp > 21 && brake_p > 1.44) {
+                    BSPD_counter++;
+                    bspd = 1;
+                }
+                else {
+                    BSPD_counter = 0;
+                    bspd = 0;
+                }
             }
-            else {
-                BSPD_counter = 0;
-                bspd = 0;
-            }
-            if(BSPD_counter >= 33) bspd = 2;
+            if(BSPD_counter >= 33) bspd_flag = 1;
+            if(bspd_flag) bspd = 2;
             display_start();
             display_labels();
             display_grids();
@@ -20964,7 +20968,7 @@ void main(void) {
             display_laptime(lap_time.current_int, lap_time.current_dec, lap_time.best_int, lap_time.best_dec,
                              lap_time.last_int, lap_time.last_dec, lap_time.current_number, lap_time.best_number);
             display_end();
-# 186 "main.c"
+# 190 "main.c"
             refresh_screen = 0;
             TMR1_Reload();
         }

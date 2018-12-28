@@ -50,6 +50,7 @@ void main(void) {
     int BSPD_counter = 0;
     int bspd = 0;
     int brake_p = 0;
+    bool bspd_flag = false;
     wait2secs(); 
     
     // Initialize the device
@@ -148,15 +149,18 @@ void main(void) {
             }
         }
         if(refresh_screen) {
-            if(tp > 21 && brake_p > 1.44) {
-                BSPD_counter++;
-                bspd = 1;
+            if(!bspd_flag) {
+                if(tp > 21 && brake_p > 1.44) {
+                    BSPD_counter++;
+                    bspd = 1;
+                }
+                else {
+                    BSPD_counter = 0;
+                    bspd = 0;
+                }
             }
-            else {
-                BSPD_counter = 0;
-                bspd = 0;
-            }
-            if(BSPD_counter >= 33)  bspd = 2;
+            if(BSPD_counter >= 33)  bspd_flag = true;
+            if(bspd_flag)   bspd = 2;
             display_start();
             display_labels();
             display_grids();
