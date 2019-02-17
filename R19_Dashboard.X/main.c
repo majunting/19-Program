@@ -46,6 +46,7 @@ void main(void) {
     char message[MESSAGE_SIZE] = {'\0'};
     int rpm = 0, oilP = 0, fuel = 0, tp = 0, speed = 0, gear = 0, engTemp = 0, oilTemp = 0, battVolts = 0, bias = 0;
     int gasP = 0;
+    int fuelP = 0;
     int etc = 0;
     int BSPD_counter = 0;
     int bspd = 0;
@@ -100,7 +101,7 @@ void main(void) {
     // warning_3_SetLow();
     // warning_4_SetHigh();
     
-    display(rpm, oilP, gasP, fuel, tp, bspd, etc, speed, gear, engTemp, oilTemp, battVolts);
+    display(rpm, oilP, fuelP, fuel, tp, bspd, etc, speed, gear, engTemp, oilTemp, battVolts);
     
     
     TMR1_SetInterruptHandler(&refresh); 
@@ -114,7 +115,7 @@ void main(void) {
             if (canMessage.frame.id == 0x640) {
                 rpm = ((canMessage.frame.data0 << 8) | canMessage.frame.data1);
                 oilP = ((canMessage.frame.data2 << 8) | canMessage.frame.data3) / 10;
-                gasP = ((canMessage.frame.data4 << 8) | canMessage.frame.data5) / 10;
+                fuelP = ((canMessage.frame.data4 << 8) | canMessage.frame.data5);
                 tp = canMessage.frame.data6;
                 speed = canMessage.frame.data7;
             } else if (canMessage.frame.id == 0x641) {
@@ -129,7 +130,7 @@ void main(void) {
                 radio = canMessage.frame.data0 >> 7;
                 drs = canMessage.frame.data0 >> 6 & 0b1;
                 etc = canMessage.frame.data0 >> 3 & 0b111; // E-throttle state
-                fuel = canMessage.frame.data0 >> 2 & 0b1; // fuel pressure
+//                fuel = canMessage.frame.data0 >> 2 & 0b1; // fuel pressure
                 launch = canMessage.frame.data1 >> 7 & 0b1;
                 autoShift = canMessage.frame.data1 >> 6 & 0b1;
                 clutch = canMessage.frame.data1 >> 5 & 0b1;
@@ -161,6 +162,8 @@ void main(void) {
             }
             if(BSPD_counter >= 33)  bspd_flag = true;
             if(bspd_flag)   bspd = 2;
+            if(rpm > 1000 && fuelP < 320)  fuel = 0;
+            else    fuel = 1;
             display_start();
             display_labels();
             display_grids();
@@ -171,7 +174,8 @@ void main(void) {
             display_oilTemp(oilTemp);
             display_etc(etc);
             display_brake_bias(bias);
-            display_gasPres(gasP);
+//            display_gasPres(gasP);
+            display_bspd(bspd);
             display_gear(gear);
             display_fuel_level(fuel);
             display_status(launch, autoShift, clutch, radio);

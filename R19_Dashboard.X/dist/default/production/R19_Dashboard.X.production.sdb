@@ -29,8 +29,6 @@
 [v _display_battery display_battery `(v  1 e 1 0 ]
 "316
 [v _display_fuel_level display_fuel_level `(v  1 e 1 0 ]
-"327
-[v _display_gasPres display_gasPres `(v  1 e 1 0 ]
 "333
 [v _display_tp display_tp `(v  1 e 1 0 ]
 "338
@@ -989,47 +987,50 @@
 {
 [s S1948 . 22 `i 1 current 2 0 `i 1 current_number 2 2 `i 1 current_int 2 4 `i 1 current_dec 2 6 `i 1 last 2 8 `i 1 last_int 2 10 `i 1 last_dec 2 12 `i 1 best 2 14 `i 1 best_number 2 16 `i 1 best_int 2 18 `i 1 best_dec 2 20 ]
 "43
-[v main@lap_time lap_time `S1948  1 a 22 57 ]
+[v main@lap_time lap_time `S1948  1 a 22 59 ]
 "46
 [v main@message message `[20]uc  1 a 20 0 ]
 "47
-[v main@tp tp `i  1 a 2 55 ]
-"49
-[v main@etc etc `i  1 a 2 52 ]
-"48
-[v main@gasP gasP `i  1 a 2 50 ]
-"47
-[v main@battVolts battVolts `i  1 a 2 48 ]
-[v main@oilTemp oilTemp `i  1 a 2 46 ]
-[v main@engTemp engTemp `i  1 a 2 44 ]
-[v main@gear gear `i  1 a 2 42 ]
-[v main@speed speed `i  1 a 2 40 ]
-[v main@fuel fuel `i  1 a 2 38 ]
-[v main@rpm rpm `i  1 a 2 36 ]
-"51
-[v main@bspd bspd `i  1 a 2 34 ]
-"50
-[v main@BSPD_counter BSPD_counter `i  1 a 2 31 ]
+[v main@tp tp `i  1 a 2 57 ]
+[v main@rpm rpm `i  1 a 2 55 ]
 "52
-[v main@brake_p brake_p `i  1 a 2 26 ]
+[v main@bspd bspd `i  1 a 2 53 ]
 "47
-[v main@bias bias `i  1 a 2 24 ]
-[v main@oilP oilP `i  1 a 2 22 ]
+[v main@fuel fuel `i  1 a 2 50 ]
+"50
+[v main@etc etc `i  1 a 2 48 ]
+"49
+[v main@fuelP fuelP `i  1 a 2 46 ]
+"47
+[v main@battVolts battVolts `i  1 a 2 44 ]
+[v main@oilTemp oilTemp `i  1 a 2 42 ]
+[v main@engTemp engTemp `i  1 a 2 40 ]
+[v main@gear gear `i  1 a 2 38 ]
+[v main@speed speed `i  1 a 2 36 ]
+"51
+[v main@BSPD_counter BSPD_counter `i  1 a 2 33 ]
 "53
-[v main@bspd_flag bspd_flag `a  1 a 1 54 ]
+[v main@brake_p brake_p `i  1 a 2 28 ]
+"47
+[v main@bias bias `i  1 a 2 26 ]
+[v main@oilP oilP `i  1 a 2 24 ]
+"48
+[v main@gasP gasP `i  1 a 2 20 ]
+"54
+[v main@bspd_flag bspd_flag `a  1 a 1 52 ]
 "45
-[v main@radio radio `a  1 a 1 33 ]
-[v main@clutch clutch `a  1 a 1 30 ]
-[v main@autoShift autoShift `a  1 a 1 29 ]
-[v main@launch launch `a  1 a 1 28 ]
-[v main@drs drs `a  1 a 1 21 ]
+[v main@radio radio `a  1 a 1 35 ]
+[v main@clutch clutch `a  1 a 1 32 ]
+[v main@autoShift autoShift `a  1 a 1 31 ]
+[v main@launch launch `a  1 a 1 30 ]
+[v main@drs drs `a  1 a 1 23 ]
 "44
-[v main@timer_started timer_started `a  1 a 1 20 ]
+[v main@timer_started timer_started `a  1 a 1 22 ]
 "42
 [v main@F12754 F12754 `S1948  1 s 22 F12754 ]
 "45
 [v main@F12762 F12762 `[20]uc  1 s 20 F12762 ]
-"194
+"198
 } 0
 "27
 [v _wait2secs wait2secs `(v  1 e 1 0 ]
@@ -1064,12 +1065,6 @@
 [v display_laptime@lap lap `i  1 p 2 36 ]
 [v display_laptime@best_lap best_lap `i  1 p 2 38 ]
 "269
-} 0
-"327
-[v _display_gasPres display_gasPres `(v  1 e 1 0 ]
-{
-[v display_gasPres@gasPres gasPres `i  1 p 2 24 ]
-"331
 } 0
 "366
 [v _display_brake_bias display_brake_bias `(v  1 e 1 0 ]
