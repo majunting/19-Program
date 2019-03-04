@@ -1,6 +1,7 @@
 package com.example.fsae.a19telemetryapp;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -12,9 +13,45 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final double MAX_BRAKE_PRESSURE = 70.0;
+
+    private static final String REGISTER_USER_SUCCESSFUL = "Registered";
+    private static final String AUDIO_TRANSMIT_ACCEPTED = "Granted";
+    private static final String AUDIO_TRANSMIT_REJECTED = "Channel in use";
+    private static final String AUDIO_RECEIVE_ACTIVE= "Transmit";
+    private static final String AUDIO_TERMINATE = "Terminate";
+
+    private UdpListener udpListener;
+    private DataStorage dataStorage;
+
+    private Handler dataUpdateHandler;
+
+    private TextView Speed;
+    private TextView ThrottlePos;
+    private TextView ThrottlePed;
+    private TextView BPresF;
+    private TextView BPresR;
+    private TextView BTempF;
+    private TextView BTempR;
+    private TextView Gear;
+    private TextView OilTemp;
+    private TextView EngTemp;
+    private TextView FuelPres;
+    private TextView OilPres;
+    private TextView Bias;
+    private TextView RPM;
+    private TextView Lambda;
+    private TextView FuelAim;
+    private TextView BattVolt;
+    private TextView Auto;
+    private TextView Clutch;
+    private TextView Launch;
+    private TextView Radio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +77,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Speed = (TextView) findViewById(R.id.nav_engine);
     }
 
     @Override

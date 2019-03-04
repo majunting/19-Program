@@ -6,4 +6,20 @@
     <string name="nav_header_subtitle">www.eng.nus.edu.sg/edic/fsae-about-us.html</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="labelSpeed">Speed</string>
+    <string name="labelGear">Gear</string>
+    <string name="labelRPM">RPM</string>
+    <string name="labelTp">Throttle</string>
+    <string name="labelBrake">Brake</string>
+    <string name="labelEngTemp">Eng Temp</string>
+    <string name="labelOilTemp">Oil Temp</string>
+    <string name="labelBatteryVolts">Battery</string>
+    <string name="labelAirTemp">Air Temp</string>
+    <string name="labelOilPress">Oil Pressure</string>
+    <string name="labelFuelPressure">Fuel Press</string>
+    <string name="labelBrakePressureFront">Brake Press</string>
+    <string name="brakeTemp">Brake Temp</string>
+    <string name="labelBrakeBias">Brake Bias</string>
+    <string name="labelTyreTempRRI">Tyre RRI</string>
+    <string name="labelTyreTempRRO">Tyre RRO</string>
 </resources>
