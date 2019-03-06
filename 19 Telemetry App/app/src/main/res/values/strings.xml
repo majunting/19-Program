@@ -20,6 +20,7 @@
     <string name="labelBrakePressureFront">Brake Press</string>
     <string name="brakeTemp">Brake Temp</string>
     <string name="labelBrakeBias">Brake Bias</string>
+    <string name="labelLambdaDiff">Lambda Diff</string>
     <string name="labelTyreTempRRI">Tyre RRI</string>
     <string name="labelTyreTempRRO">Tyre RRO</string>
 </resources>
