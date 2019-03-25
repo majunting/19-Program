@@ -18,16 +18,18 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final double MAX_BRAKE_PRESSURE = 70.0;
+    private static final double MAX_BRAKE_PRESSURE = 40.0;
 
-    private static final String REGISTER_USER_SUCCESSFUL = "Registered";
-    private static final String AUDIO_TRANSMIT_ACCEPTED = "Granted";
-    private static final String AUDIO_TRANSMIT_REJECTED = "Channel in use";
-    private static final String AUDIO_RECEIVE_ACTIVE= "Transmit";
-    private static final String AUDIO_TERMINATE = "Terminate";
+//    private static final String REGISTER_USER_SUCCESSFUL = "Registered";
+//    private static final String AUDIO_TRANSMIT_ACCEPTED = "Granted";
+//    private static final String AUDIO_TRANSMIT_REJECTED = "Channel in use";
+//    private static final String AUDIO_RECEIVE_ACTIVE= "Transmit";
+//    private static final String AUDIO_TERMINATE = "Terminate";
 
     private UdpListener udpListener;
     private DataStorage dataStorage;
+    private TcpClient tcpClient;
+    private TcpClient.OnMessageReceived tcpDelegate;
 
     private Handler dataUpdateHandler;
 
@@ -82,6 +84,9 @@ public class MainActivity extends AppCompatActivity
         Gear = (TextView) findViewById(R.id.gear);
         RPM = (TextView) findViewById(R.id.rpm);
 
+        dataUpdateHandler = new Handler();
+        dataUpdateHandler.postDelayed(updateUI, 250);
+        connectToServer();
     }
 
     @Override
@@ -220,4 +225,15 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private void connectToServer () {
+
+    }
+
+    private Runnable updateUI = new Runnable() {
+        @Override
+        public void run() {
+
+        }
+    };
 }
