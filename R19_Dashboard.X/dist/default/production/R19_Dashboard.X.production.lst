@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V2.00 build -1524193055 
-                                                                                               Sun Feb 17 14:32:56 2019
+                                                                                               Thu Mar 14 17:05:24 2019
 
 Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 20180527130849
      1                           	processor	18F46K80
@@ -9040,15 +9040,15 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   8759  00454C  6E14               	movwf	cmd@command+3,c
   8760  00454E  ECE1  F032         	call	_cmd	;wreg free
   8761                           
-  8762                           ;display.c: 412:             cmd(((2UL<<30)|(((200 +40)&511UL)<<21)|(((45 +120)&511UL)<<
+  8762                           ;display.c: 412:             cmd(((2UL<<30)|(((200 +60)&511UL)<<21)|(((45 +120)&511UL)<<
       +                          12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
   8763  004552  0E00               	movlw	0
   8764  004554  6E11               	movwf	cmd@command,c
   8765  004556  0E50               	movlw	80
   8766  004558  6E12               	movwf	cmd@command+1,c
-  8767  00455A  0E0A               	movlw	10
+  8767  00455A  0E8A               	movlw	138
   8768  00455C  6E13               	movwf	cmd@command+2,c
-  8769  00455E  0E9E               	movlw	158
+  8769  00455E  0EA0               	movlw	160
   8770  004560  6E14               	movwf	cmd@command+3,c
   8771  004562  ECE1  F032         	call	_cmd	;wreg free
   8772                           
@@ -18390,7 +18390,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.00 build -1524193055 
-Symbol Table                                                                                   Sun Feb 17 14:32:56 2019
+Symbol Table                                                                                   Thu Mar 14 17:05:24 2019
 
                                    _SPI_Initialize 688C                                        _SSPSTATbits 000FC7  
                                      ?_display_end 0001                                       ?_display_etc 0019  
