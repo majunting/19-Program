@@ -1,5 +1,8 @@
 package com.example.fsae.a19telemetryapp;
 
+import java.nio.charset.Charset;
+import java.util.Arrays;
+
 public class DataStorage {
 
     private Object lock1 = new Object();
@@ -23,6 +26,7 @@ public class DataStorage {
     private static int FuelPres;
     private static int OilPres;
     private static int Bias;
+    private static int IAT;
     private static double RPM;
     private static double Lambda;
     private static double FuelAim;
@@ -43,6 +47,7 @@ public class DataStorage {
         Gear = 3;
         OilTemp = 55;
         EngTemp = 55;
+        IAT = 35;
         FuelPres = 325;
         OilPres = 500;
         Bias = 56;
@@ -60,22 +65,44 @@ public class DataStorage {
         switch(data[0]) {
             case 0x40:
                 synchronized (lock1) {
-
+                    int rpm_temp = (data[1] << 8 | (data[2] & 0xFF)) / 100;
+                    RPM = rpm_temp / 10.0;
+                    OilPres = (data[3] << 8 | (data[4] & 0xFF)) / 10;
+                    FuelPres = (data[5] << 8 | (data[6] & 0xFF)) / 10;
+                    ThrottlePos = data[7];
+                    Speed = data[8];
                 }
                 break;
             case 0x41:
                 synchronized (lock2) {
-
+                    BPresF = data[1];
+                    BTempF = (data[3] << 8 | (data[4]&0xFF));
+                    Gear = data[7];
+                    Bias = data[8];
                 }
                 break;
             case 0x42:
                 synchronized (lock3) {
-
+                    EngTemp = data[1];
+                    OilTemp = data[2];
+                    BattVolt = (data[3] & 0xFF) / 10.0;
+                    IAT = data[4];
                 }
                 break;
             case 0x43:
                 synchronized (lock4) {
 
+                }
+                break;
+            case (byte)0xFE:
+                if(ServerIP == null) {
+                    int zeroIndex =  data.length;
+                    for (int i=0; i<data.length; ++i) {
+                        if(data[i] == 0) {
+                            zeroIndex = i;
+                        }
+                    }
+                    ServerIP = new String(Arrays.copyOfRange(data,1,zeroIndex), Charset.forName("UTF-8"));
                 }
                 break;
         }
@@ -129,37 +156,37 @@ public class DataStorage {
     }
 
     public int getGear() {
-        synchronized (lock1) {
+        synchronized (lock2) {
             return Gear;
         }
     }
 
     public int getOilTemp() {
-        synchronized (lock1) {
+        synchronized (lock3) {
             return OilTemp;
         }
     }
 
     public int getEngTemp() {
-        synchronized (lock1) {
+        synchronized (lock3) {
             return EngTemp;
         }
     }
 
     public int getFuelPres() {
-        synchronized (lock2) {
+        synchronized (lock1) {
             return FuelPres;
         }
     }
 
     public int getOilPres() {
-        synchronized (lock2) {
+        synchronized (lock1) {
             return OilPres;
         }
     }
 
     public int getBias() {
-        synchronized (lock3) {
+        synchronized (lock2) {
             return Bias;
         }
     }
@@ -189,25 +216,25 @@ public class DataStorage {
     }
 
     public boolean getAuto() {
-        synchronized (lock3) {
+        synchronized (lock4) {
             return Auto;
         }
     }
 
     public boolean getClutch() {
-        synchronized (lock3) {
+        synchronized (lock4) {
             return Clutch;
         }
     }
 
     public boolean getLaunch() {
-        synchronized (lock3) {
+        synchronized (lock4) {
             return Launch;
         }
     }
 
     public boolean getRadio() {
-        synchronized (lock3) {
+        synchronized (lock4) {
             return Radio;
         }
     }
