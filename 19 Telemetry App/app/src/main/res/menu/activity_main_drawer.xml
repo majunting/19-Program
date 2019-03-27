@@ -22,16 +22,16 @@
             android:title="Misc" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Additional">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_graph"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="Graph" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_comms"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Comms" />
         </menu>
     </item>
 

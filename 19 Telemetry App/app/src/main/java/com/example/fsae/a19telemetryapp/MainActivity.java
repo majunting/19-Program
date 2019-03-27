@@ -215,9 +215,9 @@ public class MainActivity extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_graph) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_comms) {
 
         }
 
