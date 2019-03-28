@@ -30,8 +30,11 @@ public class MainActivity extends AppCompatActivity
     private DataStorage dataStorage;
     private TcpClient tcpClient;
     private TcpClient.OnMessageReceived tcpDelegate;
+    private GraphUpdate mGraph;
 
     private Handler dataUpdateHandler;
+
+    protected String ARG_SECTION_NUMBER;
 
     private TextView Speed;
     private TextView ThrottlePos;

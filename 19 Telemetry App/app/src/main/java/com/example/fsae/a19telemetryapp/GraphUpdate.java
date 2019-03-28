@@ -1,5 +1,6 @@
 package com.example.fsae.a19telemetryapp;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.ContactsContract;
@@ -17,9 +18,12 @@ public class GraphUpdate extends Fragment {
     private final Handler mHandler = new Handler();
     private Runnable mTimer1;
     private Runnable mTimer2;
-    private LineGraphSeries<> mSeries1;
-    private LineGraphSeries<> mSeries2;
-//    private double graph2LastXValue = 5d;
+    private LineGraphSeries<DataPoint> mSeries1;
+    private LineGraphSeries<DataPoint> mSeries2;
+    private double graph1LastXValue = 0d;
+    private double graph2LastXValue = 0d;
+
+    private DataStorage mDataStorage;
 //
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,29 +53,30 @@ public class GraphUpdate extends Fragment {
 //        ((MainActivity) activity).onSectionAttached(
 //                getArguments().getInt(MainActivity.ARG_SECTION_NUMBER));
 //    }
-//
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        mTimer1 = new Runnable() {
-//            @Override
-//            public void run() {
-//                mSeries1.resetData(generateData());
-//                mHandler.postDelayed(this, 300);
-//            }
-//        };
-//        mHandler.postDelayed(mTimer1, 300);
-//
-//        mTimer2 = new Runnable() {
-//            @Override
-//            public void run() {
-//                graph2LastXValue += 1d;
-//                mSeries2.appendData(new DataPoint(graph2LastXValue, getRandom()), true, 40);
-//                mHandler.postDelayed(this, 200);
-//            }
-//        };
-//        mHandler.postDelayed(mTimer2, 1000);
-//    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTimer1 = new Runnable() {
+            @Override
+            public void run() {
+                graph1LastXValue += 1d;
+                mSeries1.appendData(new DataPoint(graph1LastXValue, mDataStorage.getSpeed()), true, 50);
+                mHandler.postDelayed(this, 200);
+            }
+        };
+        mHandler.postDelayed(mTimer1, 300);
+
+        mTimer2 = new Runnable() {
+            @Override
+            public void run() {
+                graph2LastXValue += 1d;
+                mSeries2.appendData(new DataPoint(graph2LastXValue, mDataStorage.getRPM()), true, 50);
+                mHandler.postDelayed(this, 200);
+            }
+        };
+        mHandler.postDelayed(mTimer2, 1000);
+    }
 //
 //    @Override
 //    public void onPause() {
@@ -93,9 +98,9 @@ public class GraphUpdate extends Fragment {
 //        return values;
 //    }
 //
-    private DataPoint[] retrieveData() {
-        DataPoint[] temp = new DataPoint[];
-        return temp;
+
+    public void setDataStorage(DataStorage DataStorage) {
+        this.mDataStorage = DataStorage;
     }
 //    double mLastRandom = 2;
 //    Random mRand = new Random();

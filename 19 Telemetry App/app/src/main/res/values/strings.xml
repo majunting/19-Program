@@ -15,12 +15,12 @@
     <string name="labelOilTemp">Oil Temp</string>
     <string name="labelBatteryVolts">Battery</string>
     <string name="labelAirTemp">Air Temp</string>
-    <string name="labelOilPress">Oil Pressure</string>
-    <string name="labelFuelPressure">Fuel Press</string>
+    <string name="labelOilPres">Oil Pressure</string>
+    <string name="labelFuelPres">Fuel Press</string>
     <string name="labelBrakePressureFront">Brake Press</string>
     <string name="brakeTemp">Brake Temp</string>
     <string name="labelBrakeBias">Brake Bias</string>
-    <string name="labelLambdaDiff">Lambda Diff</string>
+    <string name="labelLambdaDiff">Lambda</string>
     <string name="labelTyreTempRRI">Tyre RRI</string>
     <string name="labelTyreTempRRO">Tyre RRO</string>
 </resources>
