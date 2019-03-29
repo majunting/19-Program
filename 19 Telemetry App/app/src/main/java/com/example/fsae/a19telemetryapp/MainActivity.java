@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity
         Gear = (TextView) findViewById(R.id.gear);
         RPM = (TextView) findViewById(R.id.rpm);
 
+        initializeUdpListener();
         dataUpdateHandler = new Handler();
         dataUpdateHandler.postDelayed(updateUI, 250);
         connectToServer();
@@ -227,6 +228,13 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void initializeUdpListener() {
+        dataStorage = new DataStorage();
+        udpListener = new UdpListener(dataStorage);
+        udpListener.setPriority(Thread.NORM_PRIORITY);
+        udpListener.start();
     }
 
     private void connectToServer () {
