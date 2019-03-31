@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
@@ -41,8 +42,10 @@ public class MainActivity extends AppCompatActivity
     private TextView ThrottlePed;
     private TextView BPresF;
     private TextView BPresR;
+    private TextView BPresPercent;
     private TextView BTempF;
     private TextView BTempR;
+    private TextView IAT;
     private TextView Gear;
     private TextView OilTemp;
     private TextView EngTemp;
@@ -57,6 +60,8 @@ public class MainActivity extends AppCompatActivity
     private TextView Clutch;
     private TextView Launch;
     private TextView Radio;
+    private ProgressBar TpBar;
+    private ProgressBar BPresBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +91,11 @@ public class MainActivity extends AppCompatActivity
         Speed = (TextView) findViewById(R.id.speed);
         Gear = (TextView) findViewById(R.id.gear);
         RPM = (TextView) findViewById(R.id.rpm);
+        ThrottlePos = (TextView) findViewById(R.id.tp);
+        TpBar = (ProgressBar) findViewById(R.id.tpProgressBar);
+        BPresF = (TextView) findViewById(R.id.brake);
+        BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
+
 
         initializeUdpListener();
         dataUpdateHandler = new Handler();
@@ -241,10 +251,48 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+//        if(audioThread != null && audioThread.isAlive()) {
+//            audioThread.interrupt();
+//        }
+//        if(audioReceiveThread != null) {
+//            audioReceiveThread.interrupt();
+//        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(tcpClient != null) {
+            tcpClient.stopClient();
+        }
+    }
+
     private Runnable updateUI = new Runnable() {
         @Override
         public void run() {
+            int currentTp = dataStorage.getThrottlePos();
+            int currentBrake = dataStorage.getBPresF();
 
+            Speed.setText(Integer.toString(dataStorage.getSpeed()));
+            Gear.setText(Integer.toString(dataStorage.getGear()));
+            RPM.setText(Double.toString(dataStorage.getRPM()));
+            ThrottlePos.setText(Integer.toString(currentTp));
+            BPresPercent.setText(Integer.toString((int) (currentBrake / MAX_BRAKE_PRESSURE * 100)));
+            IAT.setText(Integer.toString(dataStorage.getIAT()));
+            OilTemp.setText(Integer.toString(dataStorage.getOilTemp()));
+            EngTemp.setText(Integer.toString(dataStorage.getEngTemp()));
+            BattVolt.setText(Double.toString(dataStorage.getBattVolt()));
+            OilPres.setText(Integer.toString(dataStorage.getOilPres()));
+            FuelPres.setText(Integer.toString(dataStorage.getFuelPres()));
+            BPresF.setText(Double.toString(currentBrake / 10.0));
+            BTempF.setText(Integer.toString(dataStorage.getBTempF()));
+            Bias.setText(Integer.toString(dataStorage.getBias()));
+            TpBar.setProgress(currentTp);
+            BPresBar.setProgress((int) (currentBrake / MAX_BRAKE_PRESSURE * 100));
+            dataUpdateHandler.post(this);
         }
     };
 }

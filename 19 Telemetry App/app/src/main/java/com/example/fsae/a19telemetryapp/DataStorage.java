@@ -185,6 +185,12 @@ public class DataStorage {
         }
     }
 
+    public int getIAT() {
+        synchronized (lock3) {
+            return IAT;
+        }
+    }
+
     public int getBias() {
         synchronized (lock2) {
             return Bias;
