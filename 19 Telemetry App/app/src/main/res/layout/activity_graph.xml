@@ -14,12 +14,14 @@
         android:layout_height="match_parent" />
     <com.jjoe64.graphview.GraphView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/graphHeight"
+        android:layout_marginTop="?attr/actionBarSize"
         android:id="@+id/Graph1" />
-    <com.jjoe64.graphview.GraphView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/Graph2" />
+    <!--<com.jjoe64.graphview.GraphView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/graphHeight"-->
+        <!--android:layout_marginTop="256dp"-->
+        <!--android:id="@+id/Graph2"/>-->
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"

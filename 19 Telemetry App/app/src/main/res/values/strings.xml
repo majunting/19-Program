@@ -23,4 +23,7 @@
     <string name="labelLambdaDiff">Lambda</string>
     <string name="labelTyreTempRRI">Tyre RRI</string>
     <string name="labelTyreTempRRO">Tyre RRO</string>
+    <string name="labelThrottlePedal">Throttle Pedal</string>
+    <string name="labelThrottlePos">Throttle Pos</string>
+    <string name="labelTpMode">TP Mode</string>
 </resources>

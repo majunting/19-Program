@@ -9,12 +9,14 @@
     <dimen name="elevationFABonRest">6dp</dimen>
     <dimen name="elevationAppbar">4dp</dimen>
     <dimen name="labelTextSize">18dp</dimen>
+    <dimen name="graphHeight">200dp</dimen>
     <dimen name="gridHeight">125dp</dimen>
     <dimen name="gridMargin">4dp</dimen>
     <dimen name="labelTextMargin">5dp</dimen>
     <dimen name="widthProgressBar">15dp</dimen>
     <dimen name="dataTextSize">50sp</dimen>
     <dimen name="dataTextSizeSmall">40dp</dimen>
+    <dimen name="TextSizeSmall">35dp</dimen>
     <dimen name="dataMarginLeft">15dp</dimen>
     <dimen name="dataMarginTop">10dp</dimen>
     <dimen name="unitSize">15sp</dimen>

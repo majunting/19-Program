@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity
     private DataStorage dataStorage;
     private TcpClient tcpClient;
     private TcpClient.OnMessageReceived tcpDelegate;
-    private GraphUpdate mGraph;
+//    private GraphUpdate mGraph;
 
     private Handler dataUpdateHandler;
 
@@ -97,10 +97,10 @@ public class MainActivity extends AppCompatActivity
         BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
 
 
-        initializeUdpListener();
+//        initializeUdpListener();
         dataUpdateHandler = new Handler();
         dataUpdateHandler.postDelayed(updateUI, 250);
-        connectToServer();
+//        connectToServer();
     }
 
     @Override
@@ -230,7 +230,26 @@ public class MainActivity extends AppCompatActivity
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
         } else if (id == R.id.nav_graph) {
+            setContentView(R.layout.activity_graph);        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
 
+            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+            });
+
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                    this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+            drawer.addDrawerListener(toggle);
+            toggle.syncState();
+
+            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            navigationView.setNavigationItemSelectedListener(this);
         } else if (id == R.id.nav_comms) {
 
         }
@@ -240,59 +259,59 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void initializeUdpListener() {
-        dataStorage = new DataStorage();
-        udpListener = new UdpListener(dataStorage);
-        udpListener.setPriority(Thread.NORM_PRIORITY);
-        udpListener.start();
-    }
+//    private void initializeUdpListener() {
+//        dataStorage = new DataStorage();
+//        udpListener = new UdpListener(dataStorage);
+//        udpListener.setPriority(Thread.NORM_PRIORITY);
+//        udpListener.start();
+//    }
 
-    private void connectToServer () {
-
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-//        if(audioThread != null && audioThread.isAlive()) {
-//            audioThread.interrupt();
+//    private void connectToServer () {
+//
+//    }
+//
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+////        if(audioThread != null && audioThread.isAlive()) {
+////            audioThread.interrupt();
+////        }
+////        if(audioReceiveThread != null) {
+////            audioReceiveThread.interrupt();
+////        }
+//    }
+//
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//        if(tcpClient != null) {
+//            tcpClient.stopClient();
 //        }
-//        if(audioReceiveThread != null) {
-//            audioReceiveThread.interrupt();
-//        }
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if(tcpClient != null) {
-            tcpClient.stopClient();
-        }
-    }
+//    }
 
     private Runnable updateUI = new Runnable() {
         @Override
         public void run() {
-            int currentTp = dataStorage.getThrottlePos();
-            int currentBrake = dataStorage.getBPresF();
-
-            Speed.setText(Integer.toString(dataStorage.getSpeed()));
-            Gear.setText(Integer.toString(dataStorage.getGear()));
-            RPM.setText(Double.toString(dataStorage.getRPM()));
-            ThrottlePos.setText(Integer.toString(currentTp));
-            BPresPercent.setText(Integer.toString((int) (currentBrake / MAX_BRAKE_PRESSURE * 100)));
-            IAT.setText(Integer.toString(dataStorage.getIAT()));
-            OilTemp.setText(Integer.toString(dataStorage.getOilTemp()));
-            EngTemp.setText(Integer.toString(dataStorage.getEngTemp()));
-            BattVolt.setText(Double.toString(dataStorage.getBattVolt()));
-            OilPres.setText(Integer.toString(dataStorage.getOilPres()));
-            FuelPres.setText(Integer.toString(dataStorage.getFuelPres()));
-            BPresF.setText(Double.toString(currentBrake / 10.0));
-            BTempF.setText(Integer.toString(dataStorage.getBTempF()));
-            Bias.setText(Integer.toString(dataStorage.getBias()));
-            TpBar.setProgress(currentTp);
-            BPresBar.setProgress((int) (currentBrake / MAX_BRAKE_PRESSURE * 100));
-            dataUpdateHandler.post(this);
+//            int currentTp = dataStorage.getThrottlePos();
+//            int currentBrake = dataStorage.getBPresF();
+//
+//            Speed.setText(Integer.toString(dataStorage.getSpeed()));
+//            Gear.setText(Integer.toString(dataStorage.getGear()));
+//            RPM.setText(Double.toString(dataStorage.getRPM()));
+//            ThrottlePos.setText(Integer.toString(currentTp));
+//            BPresPercent.setText(Integer.toString((int) (currentBrake / MAX_BRAKE_PRESSURE * 100)));
+//            IAT.setText(Integer.toString(dataStorage.getIAT()));
+//            OilTemp.setText(Integer.toString(dataStorage.getOilTemp()));
+//            EngTemp.setText(Integer.toString(dataStorage.getEngTemp()));
+//            BattVolt.setText(Double.toString(dataStorage.getBattVolt()));
+//            OilPres.setText(Integer.toString(dataStorage.getOilPres()));
+//            FuelPres.setText(Integer.toString(dataStorage.getFuelPres()));
+//            BPresF.setText(Double.toString(currentBrake / 10.0));
+//            BTempF.setText(Integer.toString(dataStorage.getBTempF()));
+//            Bias.setText(Integer.toString(dataStorage.getBias()));
+//            TpBar.setProgress(currentTp);
+//            BPresBar.setProgress((int) (currentBrake / MAX_BRAKE_PRESSURE * 100));
+//            dataUpdateHandler.post(this);
         }
     };
 }

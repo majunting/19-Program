@@ -37,12 +37,12 @@ public class GraphUpdate extends Fragment {
         graph1.getViewport().setMinX(0);
         graph1.getViewport().setMaxX(500);
 
-        GraphView graph2 = (GraphView) rootView.findViewById(R.id.Graph2);
-        mSeries2 = new LineGraphSeries<>();
-        graph2.addSeries(mSeries2);
-        graph2.getViewport().setXAxisBoundsManual(true);
-        graph2.getViewport().setMinX(0);
-        graph2.getViewport().setMaxX(500);
+//        GraphView graph2 = (GraphView) rootView.findViewById(R.id.Graph2);
+//        mSeries2 = new LineGraphSeries<>();
+//        graph2.addSeries(mSeries2);
+//        graph2.getViewport().setXAxisBoundsManual(true);
+//        graph2.getViewport().setMinX(0);
+//        graph2.getViewport().setMaxX(500);
 
         return rootView;
     }
