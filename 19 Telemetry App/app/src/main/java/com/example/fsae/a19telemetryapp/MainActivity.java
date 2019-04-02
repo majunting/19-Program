@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity
     private DataStorage dataStorage;
     private TcpClient tcpClient;
     private TcpClient.OnMessageReceived tcpDelegate;
-//    private GraphUpdate mGraph;
+    private GraphUpdate mGraph;
 
     private Handler dataUpdateHandler;
 
@@ -97,10 +97,10 @@ public class MainActivity extends AppCompatActivity
         BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
 
 
-//        initializeUdpListener();
+        initializeUdpListener();
         dataUpdateHandler = new Handler();
         dataUpdateHandler.postDelayed(updateUI, 250);
-//        connectToServer();
+        connectToServer();
     }
 
     @Override
@@ -259,35 +259,37 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-//    private void initializeUdpListener() {
-//        dataStorage = new DataStorage();
-//        udpListener = new UdpListener(dataStorage);
-//        udpListener.setPriority(Thread.NORM_PRIORITY);
-//        udpListener.start();
-//    }
+    private void initializeUdpListener() {
+        dataStorage = new DataStorage();
+        mGraph = new GraphUpdate();
+        mGraph.setDataStorage(dataStorage);
+        udpListener = new UdpListener(dataStorage);
+        udpListener.setPriority(Thread.NORM_PRIORITY);
+        udpListener.start();
+    }
 
-//    private void connectToServer () {
-//
-//    }
-//
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-////        if(audioThread != null && audioThread.isAlive()) {
-////            audioThread.interrupt();
-////        }
-////        if(audioReceiveThread != null) {
-////            audioReceiveThread.interrupt();
-////        }
-//    }
-//
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        if(tcpClient != null) {
-//            tcpClient.stopClient();
+    private void connectToServer () {
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+//        if(audioThread != null && audioThread.isAlive()) {
+//            audioThread.interrupt();
 //        }
-//    }
+//        if(audioReceiveThread != null) {
+//            audioReceiveThread.interrupt();
+//        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(tcpClient != null) {
+            tcpClient.stopClient();
+        }
+    }
 
     private Runnable updateUI = new Runnable() {
         @Override

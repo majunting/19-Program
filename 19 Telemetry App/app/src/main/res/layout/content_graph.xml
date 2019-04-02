@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity">
+
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/gridLayoutGraph1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/graphHeight"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/Graph1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v7.widget.GridLayout>
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/gridLayoutGraph2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/graphHeight"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayoutGraph1">
+
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/Graph2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v7.widget.GridLayout>
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/gridLayoutGraph3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/graphHeight"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayoutGraph2">
+
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/Graph3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v7.widget.GridLayout>
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/gridLayoutGraph4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/graphHeight"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayoutGraph3">
+
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/Graph4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v7.widget.GridLayout>
+
+</android.support.constraint.ConstraintLayout>
