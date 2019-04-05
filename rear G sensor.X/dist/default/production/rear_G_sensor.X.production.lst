@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V2.00 build -1524193055 
-                                                                                               Tue Mar 26 14:31:43 2019
+                                                                                               Thu Apr 04 18:25:42 2019
 
 Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 20180527130849
      1  0000                     
@@ -7963,7 +7963,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   7869                           __CFG_EBTR3$OFF equ 0x0
   7870  0000                     global __CFG_EBTRB$OFF
   7871                           __CFG_EBTRB$OFF equ 0x0
-  7872  0000                     	file	"C:\Users\haoye\AppData\Local\Temp\sqjo."
+  7872  0000                     	file	"C:\Users\haoye\AppData\Local\Temp\sdd8."
   7873                           	line	#
   7874                           psect	cinit,class=CODE,delta=1,reloc=2
   7875                           global __pcinit
@@ -8006,7 +8006,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   7912  00008F                            ds      5
   7913  00008F                     _i2c_tr_queue:
   7914  000094                            ds      5
-  7915  000094                     	file	"C:\Users\haoye\AppData\Local\Temp\sqjo."
+  7915  000094                     	file	"C:\Users\haoye\AppData\Local\Temp\sdd8."
   7916                           	line	#
   7917                           psect	cinit
   7918                           ; Clear objects allocated to BANK0 (15 bytes)
@@ -9099,72 +9099,72 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   8991  000520  0E00               	movwf	(2+(main@BNO055_accel_data+01h))&0ffh
   8992  000522  6F71               	movlw	high highword(0470h)
   8993  000524  0E00               	movwf	(3+(main@BNO055_accel_data+01h))&0ffh
-  8994  000526  6F72               	line	170
+  8994  000526  6F72               	line	171
   8995                           	
   8996                           l3536:; BSR set to: 0
   8997  000528                     
-  8998                           ;main.c: 170: BNO055_accel_data.frame.dlc = 6;
+  8998                           ;main.c: 171: BNO055_accel_data.frame.dlc = 6;
   8999                           	movlw	low(06h)
   9000  000528  0E06               	movwf	(0+(main@BNO055_accel_data+05h))&0ffh
-  9001  00052A  6F73               	line	171
+  9001  00052A  6F73               	line	172
   9002                           	
   9003                           l3538:; BSR set to: 0
   9004  00052C                     
-  9005                           ;main.c: 171: BNO055_accel_data.frame.data0 = linear_accel_z_MSB;
+  9005                           ;main.c: 172: BNO055_accel_data.frame.data0 = linear_accel_z_MSB;
   9006                           	movff	(main@linear_accel_z_MSB),0+(main@BNO055_accel_data+06h)
-  9007  00052C  C064  F074         	line	172
+  9007  00052C  C064  F074         	line	173
   9008                           	
   9009                           l3540:; BSR set to: 0
   9010  000530                     
-  9011                           ;main.c: 172: BNO055_accel_data.frame.data1 = linear_accel_z_LSB;
+  9011                           ;main.c: 173: BNO055_accel_data.frame.data1 = linear_accel_z_LSB;
   9012                           	movff	(main@linear_accel_z_LSB),0+(main@BNO055_accel_data+07h)
-  9013  000530  C065  F075         	line	173
+  9013  000530  C065  F075         	line	174
   9014                           	
   9015                           l3542:; BSR set to: 0
   9016  000534                     
-  9017                           ;main.c: 173: BNO055_accel_data.frame.data2 = linear_accel_y_MSB;
+  9017                           ;main.c: 174: BNO055_accel_data.frame.data2 = linear_accel_y_MSB;
   9018                           	movff	(main@linear_accel_y_MSB),0+(main@BNO055_accel_data+08h)
-  9019  000534  C062  F076         	line	174
+  9019  000534  C062  F076         	line	175
   9020                           	
   9021                           l3544:; BSR set to: 0
   9022  000538                     
-  9023                           ;main.c: 174: BNO055_accel_data.frame.data3 = linear_accel_y_LSB;
+  9023                           ;main.c: 175: BNO055_accel_data.frame.data3 = linear_accel_y_LSB;
   9024                           	movff	(main@linear_accel_y_LSB),0+(main@BNO055_accel_data+09h)
-  9025  000538  C063  F077         	line	175
+  9025  000538  C063  F077         	line	176
   9026                           	
   9027                           l3546:; BSR set to: 0
   9028  00053C                     
-  9029                           ;main.c: 175: BNO055_accel_data.frame.data4 = linear_accel_x_MSB;
+  9029                           ;main.c: 176: BNO055_accel_data.frame.data4 = linear_accel_x_MSB;
   9030                           	movff	(main@linear_accel_x_MSB),0+(main@BNO055_accel_data+0Ah)
-  9031  00053C  C060  F078         	line	176
+  9031  00053C  C060  F078         	line	177
   9032                           	
   9033                           l3548:; BSR set to: 0
   9034  000540                     
-  9035                           ;main.c: 176: BNO055_accel_data.frame.data5 = linear_accel_x_LSB;
+  9035                           ;main.c: 177: BNO055_accel_data.frame.data5 = linear_accel_x_LSB;
   9036                           	movff	(main@linear_accel_x_LSB),0+(main@BNO055_accel_data+0Bh)
-  9037  000540  C061  F079         	line	178
+  9037  000540  C061  F079         	line	179
   9038                           	
   9039                           l3550:; BSR set to: 0
   9040  000544                     
-  9041                           ;main.c: 178: CAN_transmit(&BNO055_accel_data);
+  9041                           ;main.c: 179: CAN_transmit(&BNO055_accel_data);
   9042                           		movlw	low(main@BNO055_accel_data)
   9043  000544  0E6E               	movwf	((c:CAN_transmit@tempCanMsg)),c
   9044  000546  6E15               	movlw	high(main@BNO055_accel_data)
   9045  000548  0E00               	movwf	((c:CAN_transmit@tempCanMsg+1)),c
   9046  00054A  6E16               
   9047                           	call	_CAN_transmit	;wreg free
-  9048  00054C  EC2C  F000         	line	180
+  9048  00054C  EC2C  F000         	line	181
   9049                           	
   9050                           l3552:
-  9051  000550                     ;main.c: 180: BNO055_gyro_data.frame.idType = 1;
+  9051  000550                     ;main.c: 181: BNO055_gyro_data.frame.idType = 1;
   9052                           	movlw	low(01h)
   9053  000550  0E01               	movlb	0	; () banked
   9054  000552  0100               	movwf	((main@BNO055_gyro_data))&0ffh
-  9055  000554  6F7C               	line	181
+  9055  000554  6F7C               	line	182
   9056                           	
   9057                           l3554:; BSR set to: 0
   9058  000556                     
-  9059                           ;main.c: 181: BNO055_gyro_data.frame.id = 0x471;
+  9059                           ;main.c: 182: BNO055_gyro_data.frame.id = 0x471;
   9060                           	movlw	low(0471h)
   9061  000556  0E71               	movwf	(0+(main@BNO055_gyro_data+01h))&0ffh
   9062  000558  6F7D               	movlw	high(0471h)
@@ -9173,83 +9173,83 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   9065  00055E  0E00               	movwf	(2+(main@BNO055_gyro_data+01h))&0ffh
   9066  000560  6F7F               	movlw	high highword(0471h)
   9067  000562  0E00               	movwf	(3+(main@BNO055_gyro_data+01h))&0ffh
-  9068  000564  6F80               	line	182
+  9068  000564  6F80               	line	183
   9069                           	
   9070                           l3556:; BSR set to: 0
   9071  000566                     
-  9072                           ;main.c: 182: BNO055_gyro_data.frame.dlc = 6;
+  9072                           ;main.c: 183: BNO055_gyro_data.frame.dlc = 6;
   9073                           	movlw	low(06h)
   9074  000566  0E06               	movwf	(0+(main@BNO055_gyro_data+05h))&0ffh
-  9075  000568  6F81               	line	183
+  9075  000568  6F81               	line	184
   9076                           	
   9077                           l3558:; BSR set to: 0
   9078  00056A                     
-  9079                           ;main.c: 183: BNO055_gyro_data.frame.data0 = gyro_x_MSB;
+  9079                           ;main.c: 184: BNO055_gyro_data.frame.data0 = gyro_x_MSB;
   9080                           	movff	(main@gyro_x_MSB),0+(main@BNO055_gyro_data+06h)
-  9081  00056A  C067  F082         	line	184
+  9081  00056A  C067  F082         	line	185
   9082                           	
   9083                           l3560:; BSR set to: 0
   9084  00056E                     
-  9085                           ;main.c: 184: BNO055_gyro_data.frame.data1 = gyro_x_LSB;
+  9085                           ;main.c: 185: BNO055_gyro_data.frame.data1 = gyro_x_LSB;
   9086                           	movff	(main@gyro_x_LSB),0+(main@BNO055_gyro_data+07h)
-  9087  00056E  C066  F083         	line	185
+  9087  00056E  C066  F083         	line	186
   9088                           	
   9089                           l3562:; BSR set to: 0
   9090  000572                     
-  9091                           ;main.c: 185: BNO055_gyro_data.frame.data2 = gyro_y_MSB;
+  9091                           ;main.c: 186: BNO055_gyro_data.frame.data2 = gyro_y_MSB;
   9092                           	movff	(main@gyro_y_MSB),0+(main@BNO055_gyro_data+08h)
-  9093  000572  C069  F084         	line	186
+  9093  000572  C069  F084         	line	187
   9094                           	
   9095                           l3564:; BSR set to: 0
   9096  000576                     
-  9097                           ;main.c: 186: BNO055_gyro_data.frame.data3 = gyro_y_LSB;
+  9097                           ;main.c: 187: BNO055_gyro_data.frame.data3 = gyro_y_LSB;
   9098                           	movff	(main@gyro_y_LSB),0+(main@BNO055_gyro_data+09h)
-  9099  000576  C068  F085         	line	187
+  9099  000576  C068  F085         	line	188
   9100                           	
   9101                           l3566:; BSR set to: 0
   9102  00057A                     
-  9103                           ;main.c: 187: BNO055_gyro_data.frame.data4 = gyro_z_MSB;
+  9103                           ;main.c: 188: BNO055_gyro_data.frame.data4 = gyro_z_MSB;
   9104                           	movff	(main@gyro_z_MSB),0+(main@BNO055_gyro_data+0Ah)
-  9105  00057A  C06B  F086         	line	188
+  9105  00057A  C06B  F086         	line	189
   9106                           	
   9107                           l3568:; BSR set to: 0
   9108  00057E                     
-  9109                           ;main.c: 188: BNO055_gyro_data.frame.data5 = gyro_z_LSB;
+  9109                           ;main.c: 189: BNO055_gyro_data.frame.data5 = gyro_z_LSB;
   9110                           	movff	(main@gyro_z_LSB),0+(main@BNO055_gyro_data+0Bh)
-  9111  00057E  C06A  F087         	line	190
+  9111  00057E  C06A  F087         	line	191
   9112                           	
   9113                           l3570:; BSR set to: 0
   9114  000582                     
-  9115                           ;main.c: 190: CAN_transmit(&BNO055_gyro_data);
+  9115                           ;main.c: 191: CAN_transmit(&BNO055_gyro_data);
   9116                           		movlw	low(main@BNO055_gyro_data)
   9117  000582  0E7C               	movwf	((c:CAN_transmit@tempCanMsg)),c
   9118  000584  6E15               	movlw	high(main@BNO055_gyro_data)
   9119  000586  0E00               	movwf	((c:CAN_transmit@tempCanMsg+1)),c
   9120  000588  6E16               
   9121                           	call	_CAN_transmit	;wreg free
-  9122  00058A  EC2C  F000         	line	192
+  9122  00058A  EC2C  F000         	line	193
   9123                           	
   9124                           l3572:
-  9125  00058E                     ;main.c: 192: TMR2_ClearTransmit();
+  9125  00058E                     ;main.c: 193: TMR2_ClearTransmit();
   9126                           	call	_TMR2_ClearTransmit	;wreg free
-  9127  00058E  EC82  F005         	line	193
+  9127  00058E  EC82  F005         	line	194
   9128                           	
   9129                           l3574:
-  9130  000592                     ;main.c: 193: (INTCONbits.PEIE = 1);
+  9130  000592                     ;main.c: 194: (INTCONbits.PEIE = 1);
   9131                           	bsf	((c:4082)),c,6	;volatile
   9132  000592  8CF2               	goto	l3484
-  9133  000594  EFD2  F001         	line	194
+  9133  000594  EFD2  F001         	line	195
   9134                           	
   9135                           l764:
   9136  000598                     	goto	l3484
-  9137  000598  EFD2  F001         	line	195
+  9137  000598  EFD2  F001         	line	196
   9138                           	
   9139                           l765:
   9140  00059C                     	line	115
   9141                           	goto	l3484
   9142  00059C  EFD2  F001         	
   9143                           l766:
-  9144  0005A0                     	line	196
+  9144  0005A0                     	line	197
   9145                           	
   9146                           l767:
   9147  0005A0                     	global	start
@@ -10514,7 +10514,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  10337                           
  10338 ;; *************** function _I2C_Master_Read *****************
  10339 ;; Defined at:
- 10340 ;;		line 227 in file "main.c"
+ 10340 ;;		line 228 in file "main.c"
  10341 ;; Parameters:    Size  Location     Type
  10342 ;;  a               2    3[COMRAM] unsigned short 
  10343 ;;  data            2    5[COMRAM] PTR unsigned char 
@@ -10550,46 +10550,46 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  10368 ;;
  10369                           psect	text14,class=CODE,space=0,reloc=2,group=0
  10370                           	file	"main.c"
- 10371                           	line	227
+ 10371                           	line	228
  10372                           global __ptext14
  10373                           __ptext14:
  10374  0008FA                     psect	text14
  10375                           	file	"main.c"
- 10376                           	line	227
+ 10376                           	line	228
  10377                           	global	__size_of_I2C_Master_Read
  10378                           	__size_of_I2C_Master_Read	equ	__end_of_I2C_Master_Read-_I2C_Master_Read
  10379  0000                     	
  10380                           _I2C_Master_Read:
  10381  0008FA                     ;incstack = 0
  10382                           	opt	stack 25
- 10383                           	line	230
+ 10383                           	line	231
  10384                           	
  10385                           l3454:
- 10386  0008FA                     ;main.c: 229: unsigned short temp;;main.c: 230: uint8_t i = 0;
+ 10386  0008FA                     ;main.c: 230: unsigned short temp;;main.c: 231: uint8_t i = 0;
  10387                           	movlw	low(0)
  10388  0008FA  0E00               	movwf	((c:I2C_Master_Read@i)),c
- 10389  0008FC  6E0A               	line	231
- 10390                           ;main.c: 231: while (i < a){
+ 10389  0008FC  6E0A               	line	232
+ 10390                           ;main.c: 232: while (i < a){
  10391                           	goto	l3470
  10392  0008FE  EFA6  F004         	
  10393                           l789:
- 10394  000902                     	line	232
+ 10394  000902                     	line	233
  10395                           	
  10396                           l3456:
- 10397  000902                     ;main.c: 232: I2C_Master_Wait();
+ 10397  000902                     ;main.c: 233: I2C_Master_Wait();
  10398                           	call	_I2C_Master_Wait	;wreg free
- 10399  000902  ECFE  F004         	line	233
+ 10399  000902  ECFE  F004         	line	234
  10400                           	
  10401                           l3458:
- 10402  000906                     ;main.c: 233: RCEN = 1;
+ 10402  000906                     ;main.c: 234: RCEN = 1;
  10403                           	bsf	c:(32299/8),(32299)&7	;volatile
- 10404  000906  86C5               	line	234
- 10405                           ;main.c: 234: I2C_Master_Wait();
+ 10404  000906  86C5               	line	235
+ 10405                           ;main.c: 235: I2C_Master_Wait();
  10406                           	call	_I2C_Master_Wait	;wreg free
- 10407  000908  ECFE  F004         	line	235
+ 10407  000908  ECFE  F004         	line	236
  10408                           	
  10409                           l3460:
- 10410  00090C                     ;main.c: 235: data[i] = SSPBUF;
+ 10410  00090C                     ;main.c: 236: data[i] = SSPBUF;
  10411                           	movf	((c:I2C_Master_Read@i)),c,w
  10412  00090C  500A               	mullw	01h
  10413  00090E  0D01               	movf	(prodl),c,w
@@ -10600,20 +10600,20 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  10418  000918  2007               	movwf	1+c:fsr2l
  10419  00091A  6EDA               	movff	(c:4041),indf2	;volatile
  10420  00091C  CFC9 FFDF          
- 10421                           	line	236
+ 10421                           	line	237
  10422                           	
  10423                           l3462:
- 10424  000920                     ;main.c: 236: i++;
+ 10424  000920                     ;main.c: 237: i++;
  10425                           	incf	((c:I2C_Master_Read@i)),c
- 10426  000920  2A0A               	line	237
+ 10426  000920  2A0A               	line	238
  10427                           	
  10428                           l3464:
- 10429  000922                     ;main.c: 237: I2C_Master_Wait();
+ 10429  000922                     ;main.c: 238: I2C_Master_Wait();
  10430                           	call	_I2C_Master_Wait	;wreg free
- 10431  000922  ECFE  F004         	line	238
+ 10431  000922  ECFE  F004         	line	239
  10432                           	
  10433                           l3466:
- 10434  000926                     ;main.c: 238: ACKDT = (i < a)?0:1;
+ 10434  000926                     ;main.c: 239: ACKDT = (i < a)?0:1;
  10435                           	movf	((c:I2C_Master_Read@i)),c,w
  10436  000926  500A               	movwf	(??_I2C_Master_Read+0+0)&0ffh,c
  10437  000928  6E08               	clrf	(??_I2C_Master_Read+0+0+1)&0ffh,c
@@ -10632,16 +10632,16 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  10450  000940  EFA3  F004         u1660:
  10451  000944                     	bcf	c:(32301/8),(32301)&7	;volatile
  10452  000944  9AC5               u1675:
- 10453  000946                     	line	239
+ 10453  000946                     	line	240
  10454                           	
  10455                           l3468:
- 10456  000946                     ;main.c: 239: ACKEN = 1;
+ 10456  000946                     ;main.c: 240: ACKEN = 1;
  10457                           	bsf	c:(32300/8),(32300)&7	;volatile
  10458  000946  88C5               	goto	l3470
- 10459  000948  EFA6  F004         	line	240
+ 10459  000948  EFA6  F004         	line	241
  10460                           	
  10461                           l788:
- 10462  00094C                     	line	231
+ 10462  00094C                     	line	232
  10463                           	
  10464                           l3470:
  10465  00094C                     	movf	((c:I2C_Master_Read@i)),c,w
@@ -10662,7 +10662,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  10480  000968                     	goto	l791
  10481  000968  EFB6  F004         	
  10482                           l790:
- 10483  00096C                     	line	241
+ 10483  00096C                     	line	242
  10484                           	
  10485                           l791:
  10486  00096C                     	return	;funcret
@@ -11643,7 +11643,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11447                           
  11448 ;; *************** function _BNO055Initialize *****************
  11449 ;; Defined at:
- 11450 ;;		line 243 in file "main.c"
+ 11450 ;;		line 244 in file "main.c"
  11451 ;; Parameters:    Size  Location     Type
  11452 ;;		None
  11453 ;; Auto vars:     Size  Location     Type
@@ -11679,66 +11679,66 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11478 ;;
  11479                           psect	text17,class=CODE,space=0,reloc=2,group=0
  11480                           	file	"main.c"
- 11481                           	line	243
+ 11481                           	line	244
  11482                           global __ptext17
  11483                           __ptext17:
  11484  00082C                     psect	text17
  11485                           	file	"main.c"
- 11486                           	line	243
+ 11486                           	line	244
  11487                           	global	__size_of_BNO055Initialize
  11488                           	__size_of_BNO055Initialize	equ	__end_of_BNO055Initialize-_BNO055Initialize
  11489  0000                     	
  11490                           _BNO055Initialize:
  11491  00082C                     ;incstack = 0
  11492                           	opt	stack 24
- 11493                           	line	245
+ 11493                           	line	246
  11494                           	
  11495                           l3408:
- 11496  00082C                     ;main.c: 245: I2C_Master_Start();
+ 11496  00082C                     ;main.c: 246: I2C_Master_Start();
  11497                           	call	_I2C_Master_Start	;wreg free
- 11498  00082C  EC76  F005         	line	246
- 11499                           ;main.c: 246: I2C_Master_Write(0x50);
+ 11498  00082C  EC76  F005         	line	247
+ 11499                           ;main.c: 247: I2C_Master_Write(0x50);
  11500                           	movlw	(050h)&0ffh
  11501  000830  0E50               	
  11502                           	call	_I2C_Master_Write
- 11503  000832  EC63  F005         	line	247
- 11504                           ;main.c: 247: I2C_Master_Write(BNO055_OPR_MODE_ADDR);
+ 11503  000832  EC63  F005         	line	248
+ 11504                           ;main.c: 248: I2C_Master_Write(BNO055_OPR_MODE_ADDR);
  11505                           	movlw	(03Dh)&0ffh
  11506  000836  0E3D               	
  11507                           	call	_I2C_Master_Write
- 11508  000838  EC63  F005         	line	248
- 11509                           ;main.c: 248: I2C_Master_Write(OPERATION_MODE_CONFIG);
+ 11508  000838  EC63  F005         	line	249
+ 11509                           ;main.c: 249: I2C_Master_Write(OPERATION_MODE_CONFIG);
  11510                           	movlw	(0)&0ffh
  11511  00083C  0E00               	
  11512                           	call	_I2C_Master_Write
- 11513  00083E  EC63  F005         	line	249
- 11514                           ;main.c: 249: I2C_Master_Stop();
+ 11513  00083E  EC63  F005         	line	250
+ 11514                           ;main.c: 250: I2C_Master_Stop();
  11515                           	call	_I2C_Master_Stop	;wreg free
- 11516  000842  EC72  F005         	line	251
- 11517                           ;main.c: 251: I2C_Master_Start();
+ 11516  000842  EC72  F005         	line	252
+ 11517                           ;main.c: 252: I2C_Master_Start();
  11518                           	call	_I2C_Master_Start	;wreg free
- 11519  000846  EC76  F005         	line	252
- 11520                           ;main.c: 252: I2C_Master_Write(0x50);
+ 11519  000846  EC76  F005         	line	253
+ 11520                           ;main.c: 253: I2C_Master_Write(0x50);
  11521                           	movlw	(050h)&0ffh
  11522  00084A  0E50               	
  11523                           	call	_I2C_Master_Write
- 11524  00084C  EC63  F005         	line	253
- 11525                           ;main.c: 253: I2C_Master_Write(BNO055_SYS_TRIGGER_ADDR);
+ 11524  00084C  EC63  F005         	line	254
+ 11525                           ;main.c: 254: I2C_Master_Write(BNO055_SYS_TRIGGER_ADDR);
  11526                           	movlw	(03Fh)&0ffh
  11527  000850  0E3F               	
  11528                           	call	_I2C_Master_Write
- 11529  000852  EC63  F005         	line	254
- 11530                           ;main.c: 254: I2C_Master_Write(0x20);
+ 11529  000852  EC63  F005         	line	255
+ 11530                           ;main.c: 255: I2C_Master_Write(0x20);
  11531                           	movlw	(020h)&0ffh
  11532  000856  0E20               	
  11533                           	call	_I2C_Master_Write
- 11534  000858  EC63  F005         	line	255
- 11535                           ;main.c: 255: I2C_Master_Stop();
+ 11534  000858  EC63  F005         	line	256
+ 11535                           ;main.c: 256: I2C_Master_Stop();
  11536                           	call	_I2C_Master_Stop	;wreg free
- 11537  00085C  EC72  F005         	line	257
+ 11537  00085C  EC72  F005         	line	258
  11538                           	
  11539                           l3410:
- 11540  000860                     ;main.c: 257: _delay((unsigned long)((20)*(16000000/4000.0)));
+ 11540  000860                     ;main.c: 258: _delay((unsigned long)((20)*(16000000/4000.0)));
  11541                           	opt asmopt_push
  11542                           opt asmopt_off
  11543                           movlw	104
@@ -11752,39 +11752,39 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11551  00086C  D7FC               	nop2
  11552  00086E  D000               opt asmopt_pop
  11553                           
- 11554                           	line	259
+ 11554                           	line	260
  11555                           	
  11556                           l3412:
- 11557  000870                     ;main.c: 259: I2C_Master_Start();
+ 11557  000870                     ;main.c: 260: I2C_Master_Start();
  11558                           	call	_I2C_Master_Start	;wreg free
- 11559  000870  EC76  F005         	line	260
+ 11559  000870  EC76  F005         	line	261
  11560                           	
  11561                           l3414:
- 11562  000874                     ;main.c: 260: I2C_Master_Write(0x50);
+ 11562  000874                     ;main.c: 261: I2C_Master_Write(0x50);
  11563                           	movlw	(050h)&0ffh
  11564  000874  0E50               	
  11565                           	call	_I2C_Master_Write
- 11566  000876  EC63  F005         	line	261
+ 11566  000876  EC63  F005         	line	262
  11567                           	
  11568                           l3416:
- 11569  00087A                     ;main.c: 261: I2C_Master_Write(BNO055_PWR_MODE_ADDR);
+ 11569  00087A                     ;main.c: 262: I2C_Master_Write(BNO055_PWR_MODE_ADDR);
  11570                           	movlw	(03Eh)&0ffh
  11571  00087A  0E3E               	
  11572                           	call	_I2C_Master_Write
- 11573  00087C  EC63  F005         	line	262
+ 11573  00087C  EC63  F005         	line	263
  11574                           	
  11575                           l3418:
- 11576  000880                     ;main.c: 262: I2C_Master_Write(POWER_MODE_NORMAL);
+ 11576  000880                     ;main.c: 263: I2C_Master_Write(POWER_MODE_NORMAL);
  11577                           	movlw	(0)&0ffh
  11578  000880  0E00               	
  11579                           	call	_I2C_Master_Write
- 11580  000882  EC63  F005         	line	263
+ 11580  000882  EC63  F005         	line	264
  11581                           	
  11582                           l3420:
- 11583  000886                     ;main.c: 263: I2C_Master_Stop();
+ 11583  000886                     ;main.c: 264: I2C_Master_Stop();
  11584                           	call	_I2C_Master_Stop	;wreg free
- 11585  000886  EC72  F005         	line	265
- 11586                           ;main.c: 265: _delay((unsigned long)((20)*(16000000/4000.0)));
+ 11585  000886  EC72  F005         	line	266
+ 11586                           ;main.c: 266: _delay((unsigned long)((20)*(16000000/4000.0)));
  11587                           	opt asmopt_push
  11588                           opt asmopt_off
  11589                           movlw	104
@@ -11798,103 +11798,103 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11597  000896  D7FC               	nop2
  11598  000898  D000               opt asmopt_pop
  11599                           
- 11600                           	line	267
+ 11600                           	line	268
  11601                           	
  11602                           l3422:
- 11603  00089A                     ;main.c: 267: I2C_Master_Start();
+ 11603  00089A                     ;main.c: 268: I2C_Master_Start();
  11604                           	call	_I2C_Master_Start	;wreg free
- 11605  00089A  EC76  F005         	line	268
+ 11605  00089A  EC76  F005         	line	269
  11606                           	
  11607                           l3424:
- 11608  00089E                     ;main.c: 268: I2C_Master_Write(0x50);
+ 11608  00089E                     ;main.c: 269: I2C_Master_Write(0x50);
  11609                           	movlw	(050h)&0ffh
  11610  00089E  0E50               	
  11611                           	call	_I2C_Master_Write
- 11612  0008A0  EC63  F005         	line	269
+ 11612  0008A0  EC63  F005         	line	270
  11613                           	
  11614                           l3426:
- 11615  0008A4                     ;main.c: 269: I2C_Master_Write(BNO055_PAGE_ID_ADDR);
+ 11615  0008A4                     ;main.c: 270: I2C_Master_Write(BNO055_PAGE_ID_ADDR);
  11616                           	movlw	(07h)&0ffh
  11617  0008A4  0E07               	
  11618                           	call	_I2C_Master_Write
- 11619  0008A6  EC63  F005         	line	270
+ 11619  0008A6  EC63  F005         	line	271
  11620                           	
  11621                           l3428:
- 11622  0008AA                     ;main.c: 270: I2C_Master_Write(0x0);
+ 11622  0008AA                     ;main.c: 271: I2C_Master_Write(0x0);
  11623                           	movlw	(0)&0ffh
  11624  0008AA  0E00               	
  11625                           	call	_I2C_Master_Write
- 11626  0008AC  EC63  F005         	line	271
+ 11626  0008AC  EC63  F005         	line	272
  11627                           	
  11628                           l3430:
- 11629  0008B0                     ;main.c: 271: I2C_Master_Stop();
+ 11629  0008B0                     ;main.c: 272: I2C_Master_Stop();
  11630                           	call	_I2C_Master_Stop	;wreg free
- 11631  0008B0  EC72  F005         	line	273
+ 11631  0008B0  EC72  F005         	line	274
  11632                           	
  11633                           l3432:
- 11634  0008B4                     ;main.c: 273: I2C_Master_Start();
+ 11634  0008B4                     ;main.c: 274: I2C_Master_Start();
  11635                           	call	_I2C_Master_Start	;wreg free
- 11636  0008B4  EC76  F005         	line	274
+ 11636  0008B4  EC76  F005         	line	275
  11637                           	
  11638                           l3434:
- 11639  0008B8                     ;main.c: 274: I2C_Master_Write(0x50);
+ 11639  0008B8                     ;main.c: 275: I2C_Master_Write(0x50);
  11640                           	movlw	(050h)&0ffh
  11641  0008B8  0E50               	
  11642                           	call	_I2C_Master_Write
- 11643  0008BA  EC63  F005         	line	275
+ 11643  0008BA  EC63  F005         	line	276
  11644                           	
  11645                           l3436:
- 11646  0008BE                     ;main.c: 275: I2C_Master_Write(BNO055_UNIT_SEL_ADDR);
+ 11646  0008BE                     ;main.c: 276: I2C_Master_Write(BNO055_UNIT_SEL_ADDR);
  11647                           	movlw	(03Bh)&0ffh
  11648  0008BE  0E3B               	
  11649                           	call	_I2C_Master_Write
- 11650  0008C0  EC63  F005         	line	276
+ 11650  0008C0  EC63  F005         	line	277
  11651                           	
  11652                           l3438:
- 11653  0008C4                     ;main.c: 276: I2C_Master_Write(0x1);
+ 11653  0008C4                     ;main.c: 277: I2C_Master_Write(0x1);
  11654                           	movlw	(01h)&0ffh
  11655  0008C4  0E01               	
  11656                           	call	_I2C_Master_Write
- 11657  0008C6  EC63  F005         	line	277
+ 11657  0008C6  EC63  F005         	line	278
  11658                           	
  11659                           l3440:
- 11660  0008CA                     ;main.c: 277: I2C_Master_Stop();
+ 11660  0008CA                     ;main.c: 278: I2C_Master_Stop();
  11661                           	call	_I2C_Master_Stop	;wreg free
- 11662  0008CA  EC72  F005         	line	279
+ 11662  0008CA  EC72  F005         	line	280
  11663                           	
  11664                           l3442:
- 11665  0008CE                     ;main.c: 279: I2C_Master_Start();
+ 11665  0008CE                     ;main.c: 280: I2C_Master_Start();
  11666                           	call	_I2C_Master_Start	;wreg free
- 11667  0008CE  EC76  F005         	line	280
+ 11667  0008CE  EC76  F005         	line	281
  11668                           	
  11669                           l3444:
- 11670  0008D2                     ;main.c: 280: I2C_Master_Write(0x50);
+ 11670  0008D2                     ;main.c: 281: I2C_Master_Write(0x50);
  11671                           	movlw	(050h)&0ffh
  11672  0008D2  0E50               	
  11673                           	call	_I2C_Master_Write
- 11674  0008D4  EC63  F005         	line	281
+ 11674  0008D4  EC63  F005         	line	282
  11675                           	
  11676                           l3446:
- 11677  0008D8                     ;main.c: 281: I2C_Master_Write(BNO055_SYS_TRIGGER_ADDR);
+ 11677  0008D8                     ;main.c: 282: I2C_Master_Write(BNO055_SYS_TRIGGER_ADDR);
  11678                           	movlw	(03Fh)&0ffh
  11679  0008D8  0E3F               	
  11680                           	call	_I2C_Master_Write
- 11681  0008DA  EC63  F005         	line	282
+ 11681  0008DA  EC63  F005         	line	283
  11682                           	
  11683                           l3448:
- 11684  0008DE                     ;main.c: 282: I2C_Master_Write(0x00);
+ 11684  0008DE                     ;main.c: 283: I2C_Master_Write(0x00);
  11685                           	movlw	(0)&0ffh
  11686  0008DE  0E00               	
  11687                           	call	_I2C_Master_Write
- 11688  0008E0  EC63  F005         	line	283
+ 11688  0008E0  EC63  F005         	line	284
  11689                           	
  11690                           l3450:
- 11691  0008E4                     ;main.c: 283: I2C_Master_Stop();
+ 11691  0008E4                     ;main.c: 284: I2C_Master_Stop();
  11692                           	call	_I2C_Master_Stop	;wreg free
- 11693  0008E4  EC72  F005         	line	285
+ 11693  0008E4  EC72  F005         	line	286
  11694                           	
  11695                           l3452:
- 11696  0008E8                     ;main.c: 285: _delay((unsigned long)((20)*(16000000/4000.0)));
+ 11696  0008E8                     ;main.c: 286: _delay((unsigned long)((20)*(16000000/4000.0)));
  11697                           	opt asmopt_push
  11698                           opt asmopt_off
  11699                           movlw	104
@@ -11908,7 +11908,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11707  0008F4  D7FC               	nop2
  11708  0008F6  D000               opt asmopt_pop
  11709                           
- 11710                           	line	286
+ 11710                           	line	287
  11711                           	
  11712                           l794:
  11713  0008F8                     	return	;funcret
@@ -11920,7 +11920,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11719                           
  11720 ;; *************** function _I2C_Master_Write *****************
  11721 ;; Defined at:
- 11722 ;;		line 221 in file "main.c"
+ 11722 ;;		line 222 in file "main.c"
  11723 ;; Parameters:    Size  Location     Type
  11724 ;;  d               1    wreg     unsigned char 
  11725 ;; Auto vars:     Size  Location     Type
@@ -11954,12 +11954,12 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11748 ;; This function uses a non-reentrant model
  11749 ;;
  11750                           psect	text18,class=CODE,space=0,reloc=2,group=0
- 11751                           	line	221
+ 11751                           	line	222
  11752                           global __ptext18
  11753                           __ptext18:
  11754  000AC6                     psect	text18
  11755                           	file	"main.c"
- 11756                           	line	221
+ 11756                           	line	222
  11757                           	global	__size_of_I2C_Master_Write
  11758                           	__size_of_I2C_Master_Write	equ	__end_of_I2C_Master_Write-_I2C_Master_Write
  11759  0000                     	
@@ -11968,17 +11968,17 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11762                           	opt	stack 25
  11763                           ;I2C_Master_Write@d stored from wreg
  11764                           	movwf	((c:I2C_Master_Write@d)),c
- 11765  000AC6  6E04               	line	223
+ 11765  000AC6  6E04               	line	224
  11766                           	
  11767                           l3278:
- 11768  000AC8                     ;main.c: 223: I2C_Master_Wait();
+ 11768  000AC8                     ;main.c: 224: I2C_Master_Wait();
  11769                           	call	_I2C_Master_Wait	;wreg free
- 11770  000AC8  ECFE  F004         	line	224
+ 11770  000AC8  ECFE  F004         	line	225
  11771                           	
  11772                           l3280:
- 11773  000ACC                     ;main.c: 224: SSPBUF = d;
+ 11773  000ACC                     ;main.c: 225: SSPBUF = d;
  11774                           	movff	(c:I2C_Master_Write@d),(c:4041)	;volatile
- 11775  000ACC  C004  FFC9         	line	225
+ 11775  000ACC  C004  FFC9         	line	226
  11776                           	
  11777                           l785:
  11778  000AD0                     	return	;funcret
@@ -11990,7 +11990,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11784                           
  11785 ;; *************** function _I2C_Master_Stop *****************
  11786 ;; Defined at:
- 11787 ;;		line 215 in file "main.c"
+ 11787 ;;		line 216 in file "main.c"
  11788 ;; Parameters:    Size  Location     Type
  11789 ;;		None
  11790 ;; Auto vars:     Size  Location     Type
@@ -12024,29 +12024,29 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11813 ;; This function uses a non-reentrant model
  11814 ;;
  11815                           psect	text19,class=CODE,space=0,reloc=2,group=0
- 11816                           	line	215
+ 11816                           	line	216
  11817                           global __ptext19
  11818                           __ptext19:
  11819  000AE4                     psect	text19
  11820                           	file	"main.c"
- 11821                           	line	215
+ 11821                           	line	216
  11822                           	global	__size_of_I2C_Master_Stop
  11823                           	__size_of_I2C_Master_Stop	equ	__end_of_I2C_Master_Stop-_I2C_Master_Stop
  11824  0000                     	
  11825                           _I2C_Master_Stop:
  11826  000AE4                     ;incstack = 0
  11827                           	opt	stack 25
- 11828                           	line	217
+ 11828                           	line	218
  11829                           	
  11830                           l3282:
- 11831  000AE4                     ;main.c: 217: I2C_Master_Wait();
+ 11831  000AE4                     ;main.c: 218: I2C_Master_Wait();
  11832                           	call	_I2C_Master_Wait	;wreg free
- 11833  000AE4  ECFE  F004         	line	218
+ 11833  000AE4  ECFE  F004         	line	219
  11834                           	
  11835                           l3284:
- 11836  000AE8                     ;main.c: 218: PEN = 1;
+ 11836  000AE8                     ;main.c: 219: PEN = 1;
  11837                           	bsf	c:(32298/8),(32298)&7	;volatile
- 11838  000AE8  84C5               	line	219
+ 11838  000AE8  84C5               	line	220
  11839                           	
  11840                           l782:
  11841  000AEA                     	return	;funcret
@@ -12058,7 +12058,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11847                           
  11848 ;; *************** function _I2C_Master_Start *****************
  11849 ;; Defined at:
- 11850 ;;		line 203 in file "main.c"
+ 11850 ;;		line 204 in file "main.c"
  11851 ;; Parameters:    Size  Location     Type
  11852 ;;		None
  11853 ;; Auto vars:     Size  Location     Type
@@ -12092,29 +12092,29 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11876 ;; This function uses a non-reentrant model
  11877 ;;
  11878                           psect	text20,class=CODE,space=0,reloc=2,group=0
- 11879                           	line	203
+ 11879                           	line	204
  11880                           global __ptext20
  11881                           __ptext20:
  11882  000AEC                     psect	text20
  11883                           	file	"main.c"
- 11884                           	line	203
+ 11884                           	line	204
  11885                           	global	__size_of_I2C_Master_Start
  11886                           	__size_of_I2C_Master_Start	equ	__end_of_I2C_Master_Start-_I2C_Master_Start
  11887  0000                     	
  11888                           _I2C_Master_Start:
  11889  000AEC                     ;incstack = 0
  11890                           	opt	stack 25
- 11891                           	line	205
+ 11891                           	line	206
  11892                           	
  11893                           l3274:
- 11894  000AEC                     ;main.c: 205: I2C_Master_Wait();
+ 11894  000AEC                     ;main.c: 206: I2C_Master_Wait();
  11895                           	call	_I2C_Master_Wait	;wreg free
- 11896  000AEC  ECFE  F004         	line	206
+ 11896  000AEC  ECFE  F004         	line	207
  11897                           	
  11898                           l3276:
- 11899  000AF0                     ;main.c: 206: SEN = 1;
+ 11899  000AF0                     ;main.c: 207: SEN = 1;
  11900                           	bsf	c:(32296/8),(32296)&7	;volatile
- 11901  000AF0  80C5               	line	207
+ 11901  000AF0  80C5               	line	208
  11902                           	
  11903                           l776:
  11904  000AF2                     	return	;funcret
@@ -12126,7 +12126,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11910                           
  11911 ;; *************** function _I2C_Master_Wait *****************
  11912 ;; Defined at:
- 11913 ;;		line 198 in file "main.c"
+ 11913 ;;		line 199 in file "main.c"
  11914 ;; Parameters:    Size  Location     Type
  11915 ;;		None
  11916 ;; Auto vars:     Size  Location     Type
@@ -12163,22 +12163,22 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11942 ;; This function uses a non-reentrant model
  11943 ;;
  11944                           psect	text21,class=CODE,space=0,reloc=2,group=0
- 11945                           	line	198
+ 11945                           	line	199
  11946                           global __ptext21
  11947                           __ptext21:
  11948  0009FC                     psect	text21
  11949                           	file	"main.c"
- 11950                           	line	198
+ 11950                           	line	199
  11951                           	global	__size_of_I2C_Master_Wait
  11952                           	__size_of_I2C_Master_Wait	equ	__end_of_I2C_Master_Wait-_I2C_Master_Wait
  11953  0000                     	
  11954                           _I2C_Master_Wait:
  11955  0009FC                     ;incstack = 0
  11956                           	opt	stack 25
- 11957                           	line	200
+ 11957                           	line	201
  11958                           	
  11959                           l3172:
- 11960  0009FC                     ;main.c: 200: while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
+ 11960  0009FC                     ;main.c: 201: while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
  11961                           	goto	l770
  11962  0009FC  EF00  F005         	
  11963                           l771:
@@ -12205,7 +12205,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
  11984  000A24                     	goto	l773
  11985  000A24  EF14  F005         	
  11986                           l772:
- 11987  000A28                     	line	201
+ 11987  000A28                     	line	202
  11988                           	
  11989                           l773:
  11990  000A28                     	return	;funcret
@@ -13053,7 +13053,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.00 build -1524193055 
-Symbol Table                                                                                   Tue Mar 26 14:31:43 2019
+Symbol Table                                                                                   Thu Apr 04 18:25:42 2019
 
         __end_of_TMR2_SetInterruptHandler 0ADC                     I2C_ISR@i2c_bytes_left 002B  
                                       l21 0A72                      main@BNO055_gyro_data 007C  

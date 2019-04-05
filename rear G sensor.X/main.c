@@ -167,6 +167,7 @@ void main(void)
 
             BNO055_accel_data.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
             BNO055_accel_data.frame.id = 0x470;
+            
             BNO055_accel_data.frame.dlc = 6;
             BNO055_accel_data.frame.data0 = linear_accel_z_MSB;
             BNO055_accel_data.frame.data1 = linear_accel_z_LSB;

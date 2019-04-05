@@ -20946,6 +20946,7 @@ gyro_z_MSB = data[5];
 
 BNO055_accel_data.frame.idType = 1;
 BNO055_accel_data.frame.id = 0x470;
+
 BNO055_accel_data.frame.dlc = 6;
 BNO055_accel_data.frame.data0 = linear_accel_z_MSB;
 BNO055_accel_data.frame.data1 = linear_accel_z_LSB;

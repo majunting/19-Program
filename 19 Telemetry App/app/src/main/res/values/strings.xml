@@ -15,15 +15,22 @@
     <string name="labelOilTemp">Oil Temp</string>
     <string name="labelBatteryVolts">Battery</string>
     <string name="labelAirTemp">Air Temp</string>
-    <string name="labelOilPres">Oil Pressure</string>
-    <string name="labelFuelPres">Fuel Press</string>
+    <string name="labelOilPres">Oil Pres</string>
+    <string name="labelFuelPres">Fuel Pres</string>
     <string name="labelBrakePressureFront">Brake Press</string>
     <string name="brakeTemp">Brake Temp</string>
     <string name="labelBrakeBias">Brake Bias</string>
     <string name="labelLambdaDiff">Lambda</string>
     <string name="labelTyreTempRRI">Tyre RRI</string>
     <string name="labelTyreTempRRO">Tyre RRO</string>
-    <string name="labelThrottlePedal">Throttle Pedal</string>
+    <string name="labelThrottlePedal">Pedal</string>
     <string name="labelThrottlePos">Throttle Pos</string>
     <string name="labelTpMode">TP Mode</string>
+    <string name="labelDamperFL">Damper FL</string>
+    <string name="labelDamperFR">Damper FR</string>
+    <string name="labelDamperRL">Damper RL</string>
+    <string name="labelDamperRR">Damper RR</string>
+    <string name="labelLatG">Lateral G</string>
+    <string name="labelLongG">Long G</string>
+    <string name="labelIAT">Air Temp</string>
 </resources>

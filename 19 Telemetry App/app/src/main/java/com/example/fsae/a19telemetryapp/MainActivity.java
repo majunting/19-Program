@@ -1,9 +1,11 @@
 package com.example.fsae.a19telemetryapp;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -21,11 +23,11 @@ public class MainActivity extends AppCompatActivity
 
     private static final double MAX_BRAKE_PRESSURE = 40.0;
 
-//    private static final String REGISTER_USER_SUCCESSFUL = "Registered";
-//    private static final String AUDIO_TRANSMIT_ACCEPTED = "Granted";
-//    private static final String AUDIO_TRANSMIT_REJECTED = "Channel in use";
-//    private static final String AUDIO_RECEIVE_ACTIVE= "Transmit";
-//    private static final String AUDIO_TERMINATE = "Terminate";
+    private static final String REGISTER_USER_SUCCESSFUL = "Registered";
+    private static final String AUDIO_TRANSMIT_ACCEPTED = "Granted";
+    private static final String AUDIO_TRANSMIT_REJECTED = "Channel in use";
+    private static final String AUDIO_RECEIVE_ACTIVE= "Transmit";
+    private static final String AUDIO_TERMINATE = "Terminate";
 
     private UdpListener udpListener;
     private DataStorage dataStorage;
@@ -37,7 +39,10 @@ public class MainActivity extends AppCompatActivity
 
     protected String ARG_SECTION_NUMBER;
 
+    private static boolean registered = false;
+
     private TextView Speed;
+    private TextView TPPercent;
     private TextView ThrottlePos;
     private TextView ThrottlePed;
     private TextView BPresF;
@@ -60,6 +65,7 @@ public class MainActivity extends AppCompatActivity
     private TextView Clutch;
     private TextView Launch;
     private TextView Radio;
+    private TextView TPMode;
     private ProgressBar TpBar;
     private ProgressBar BPresBar;
 
@@ -91,10 +97,22 @@ public class MainActivity extends AppCompatActivity
         Speed = (TextView) findViewById(R.id.speed);
         Gear = (TextView) findViewById(R.id.gear);
         RPM = (TextView) findViewById(R.id.rpm);
-        ThrottlePos = (TextView) findViewById(R.id.tp);
+        TPPercent = (TextView) findViewById(R.id.tp);
         TpBar = (ProgressBar) findViewById(R.id.tpProgressBar);
-        BPresF = (TextView) findViewById(R.id.brake);
+        BPresF = (TextView) findViewById(R.id.brakePercent);
         BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
+        IAT = (TextView) findViewById(R.id.airTemp);
+        EngTemp = (TextView) findViewById(R.id.EngTemp);
+        OilTemp = (TextView) findViewById(R.id.OilTemp);
+        ThrottlePed = (TextView) findViewById(R.id.throttlePedal);
+        ThrottlePos = (TextView) findViewById(R.id.throttlePos);
+        OilPres = (TextView) findViewById(R.id.oilPres);
+        FuelPres = (TextView) findViewById(R.id.fuelPres);
+        Lambda = (TextView) findViewById(R.id.lambda);
+        TPMode = (TextView) findViewById(R.id.TpMode);
+        BattVolt = (TextView) findViewById(R.id.battVolt);
+        Bias = (TextView) findViewById(R.id.bias);
+        BPresPercent = (TextView) findViewById(R.id.brakePercent);
 
 
         initializeUdpListener();
@@ -269,7 +287,34 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void connectToServer () {
-
+        tcpClient = new TcpClient(new TcpClient.OnMessageReceived() {
+            @Override
+            //here the messageReceived method is implemented
+            public void messageReceived(String message) {
+                // process the received message from TCP server
+                if(message.equals(REGISTER_USER_SUCCESSFUL)) {
+                    registered = true;
+//                } else if(message.equals(AUDIO_TRANSMIT_ACCEPTED)) {   //grant audio access command
+//                    audio_transmit_enabled = true;
+//                    activateAudioStream();
+//                    Log.e("onMessageReceived","audio_transmit_enabled" );
+//                } else if(message.equals(AUDIO_TRANSMIT_REJECTED)) {
+//                    audio_transmit_rejected = true;
+//                } else if(message.contains(AUDIO_RECEIVE_ACTIVE)) {
+//                    audio_transmit_enabled = false;
+//                    audio_transmit_rejected = false;
+//                    audio_receive_active = true;
+//                    transmitting_client_ID = message.substring(AUDIO_RECEIVE_ACTIVE.length()); //extract the userID
+//                    activateAudioReceive();
+//                } else if (message.equals(AUDIO_TERMINATE)) {
+//                    if(audioReceiveThread != null && !audioReceiveThread.isInterrupted()) {
+//                        audio_receive_active = false;
+//                        deactivateAudioReceive();
+//                    }
+                }
+            }
+        });
+        new ConnectTcpServerTask().execute();
     }
 
     @Override
@@ -294,26 +339,44 @@ public class MainActivity extends AppCompatActivity
     private Runnable updateUI = new Runnable() {
         @Override
         public void run() {
-//            int currentTp = dataStorage.getThrottlePos();
-//            int currentBrake = dataStorage.getBPresF();
-//
-//            Speed.setText(Integer.toString(dataStorage.getSpeed()));
-//            Gear.setText(Integer.toString(dataStorage.getGear()));
-//            RPM.setText(Double.toString(dataStorage.getRPM()));
-//            ThrottlePos.setText(Integer.toString(currentTp));
-//            BPresPercent.setText(Integer.toString((int) (currentBrake / MAX_BRAKE_PRESSURE * 100)));
-//            IAT.setText(Integer.toString(dataStorage.getIAT()));
-//            OilTemp.setText(Integer.toString(dataStorage.getOilTemp()));
-//            EngTemp.setText(Integer.toString(dataStorage.getEngTemp()));
-//            BattVolt.setText(Double.toString(dataStorage.getBattVolt()));
-//            OilPres.setText(Integer.toString(dataStorage.getOilPres()));
-//            FuelPres.setText(Integer.toString(dataStorage.getFuelPres()));
-//            BPresF.setText(Double.toString(currentBrake / 10.0));
-//            BTempF.setText(Integer.toString(dataStorage.getBTempF()));
-//            Bias.setText(Integer.toString(dataStorage.getBias()));
-//            TpBar.setProgress(currentTp);
-//            BPresBar.setProgress((int) (currentBrake / MAX_BRAKE_PRESSURE * 100));
-//            dataUpdateHandler.post(this);
+
+            Speed.setText(Integer.toString(dataStorage.getSpeed()));
+            Gear.setText(Integer.toString(dataStorage.getGear()));
+            RPM.setText(Double.toString(dataStorage.getRPM()));
+            TPPercent.setText(Integer.toString(dataStorage.getThrottlePos()));
+            ThrottlePos.setText(Integer.toString(dataStorage.getThrottlePos()));
+            BPresPercent.setText(Integer.toString((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100)));
+            IAT.setText(Integer.toString(dataStorage.getIAT()));
+            OilTemp.setText(Integer.toString(dataStorage.getOilTemp()));
+            EngTemp.setText(Integer.toString(dataStorage.getEngTemp()));
+            BattVolt.setText(Double.toString(dataStorage.getBattVolt()));
+            OilPres.setText(Integer.toString(dataStorage.getOilPres()));
+            FuelPres.setText(Integer.toString(dataStorage.getFuelPres()));
+            BPresF.setText(Double.toString(dataStorage.getBPresF() / 10));
+            Bias.setText(Integer.toString(dataStorage.getBias()));
+            TpBar.setProgress(dataStorage.getThrottlePos());
+            BPresBar.setProgress((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100));
+            dataUpdateHandler.post(this);
+
         }
     };
+
+    private class ConnectTcpServerTask extends AsyncTask<String, String, TcpClient> {
+        @Override
+        protected TcpClient doInBackground(String... message) {
+            while(dataStorage.getServerIP().isEmpty()); // wait for serverIP to be received
+            tcpClient.setServerIP(dataStorage.getServerIP());
+            tcpClient.run();
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(String... values) {
+            super.onProgressUpdate(values);
+            //response received from server
+            Log.d("test", "response " + values[0]);
+            //process server response here....
+
+        }
+    }
 }

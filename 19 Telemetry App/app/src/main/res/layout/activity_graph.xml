@@ -8,15 +8,28 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-    <include
-        layout="@layout/app_bar_general"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <include
-        layout="@layout/content_graph"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <include
+                layout="@layout/app_bar_general"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <include
+                layout="@layout/content_graph"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize" />
+        </LinearLayout>
+    </ScrollView>
+
     <!--<com.jjoe64.graphview.GraphView-->
         <!--android:layout_width="@dimen/graphHeight"-->
         <!--android:layout_height="100dp"-->
