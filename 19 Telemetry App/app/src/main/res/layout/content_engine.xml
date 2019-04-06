@@ -10,7 +10,6 @@
         android:id="@+id/gridLayoutEngine1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/gridHeight"
-        android:layout_marginTop="@dimen/lower_margin"
         app:layout_constraintTop_toTopOf="parent">
 
         <android.support.v7.widget.CardView
@@ -36,17 +35,11 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/IAT"
+                        android:id="@+id/airTemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="45"
                         android:textSize="@dimen/dataTextSize" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:textSize="@dimen/unitSize" />
 
                 </LinearLayout>
 
@@ -191,12 +184,6 @@
                         android:text="243"
                         android:textSize="@dimen/dataTextSize" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="kPa"
-                        android:textSize="@dimen/unitSize" />
-
                 </LinearLayout>
 
                 <TextView
@@ -239,12 +226,6 @@
                         android:layout_height="wrap_content"
                         android:text="332"
                         android:textSize="@dimen/dataTextSize" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="kPa"
-                        android:textSize="@dimen/unitSize" />
 
                 </LinearLayout>
 

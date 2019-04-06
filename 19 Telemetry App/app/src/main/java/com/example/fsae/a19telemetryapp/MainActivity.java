@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity
     private TextView BPresPercent;
     private TextView BTempF;
     private TextView BTempR;
-    private TextView IAT;
+    private TextView AirTemp;
     private TextView Gear;
     private TextView OilTemp;
     private TextView EngTemp;
@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity
     private ProgressBar TpBar;
     private ProgressBar BPresBar;
 
+    private int tab = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,14 +78,14 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -101,7 +103,7 @@ public class MainActivity extends AppCompatActivity
         TpBar = (ProgressBar) findViewById(R.id.tpProgressBar);
         BPresF = (TextView) findViewById(R.id.brakePercent);
         BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
-        IAT = (TextView) findViewById(R.id.airTemp);
+        AirTemp = (TextView) findViewById(R.id.airTemp);
         EngTemp = (TextView) findViewById(R.id.EngTemp);
         OilTemp = (TextView) findViewById(R.id.OilTemp);
         ThrottlePed = (TextView) findViewById(R.id.throttlePedal);
@@ -160,19 +162,20 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_general) {
+            tab = 0;
             // Handle the camera action
             setContentView(R.layout.activity_general);
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
-            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
+//            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//            fab.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                            .setAction("Action", null).show();
+//                }
+//            });
 
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -182,19 +185,40 @@ public class MainActivity extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
+
+            Speed = (TextView) findViewById(R.id.speed);
+            Gear = (TextView) findViewById(R.id.gear);
+            RPM = (TextView) findViewById(R.id.rpm);
+            TPPercent = (TextView) findViewById(R.id.tp);
+            TpBar = (ProgressBar) findViewById(R.id.tpProgressBar);
+            BPresF = (TextView) findViewById(R.id.brakePercent);
+            BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
+            AirTemp = (TextView) findViewById(R.id.airTemp);
+            EngTemp = (TextView) findViewById(R.id.EngTemp);
+            OilTemp = (TextView) findViewById(R.id.OilTemp);
+            ThrottlePed = (TextView) findViewById(R.id.throttlePedal);
+            ThrottlePos = (TextView) findViewById(R.id.throttlePos);
+            OilPres = (TextView) findViewById(R.id.oilPres);
+            FuelPres = (TextView) findViewById(R.id.fuelPres);
+            Lambda = (TextView) findViewById(R.id.lambda);
+            TPMode = (TextView) findViewById(R.id.TpMode);
+            BattVolt = (TextView) findViewById(R.id.battVolt);
+            Bias = (TextView) findViewById(R.id.bias);
+            BPresPercent = (TextView) findViewById(R.id.brakePercent);
         } else if (id == R.id.nav_engine) {
+            tab = 1;
             setContentView(R.layout.activity_engine);
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
-            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
+//            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//            fab.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                            .setAction("Action", null).show();
+//                }
+//            });
 
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -204,19 +228,40 @@ public class MainActivity extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
+
+            Speed = (TextView) findViewById(R.id.speed);
+            Gear = (TextView) findViewById(R.id.gear);
+            RPM = (TextView) findViewById(R.id.rpm);
+            TPPercent = (TextView) findViewById(R.id.tp);
+            TpBar = (ProgressBar) findViewById(R.id.tpProgressBar);
+            BPresF = (TextView) findViewById(R.id.brakePercent);
+            BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
+            AirTemp = (TextView) findViewById(R.id.airTemp);
+            EngTemp = (TextView) findViewById(R.id.EngTemp);
+            OilTemp = (TextView) findViewById(R.id.OilTemp);
+            ThrottlePed = (TextView) findViewById(R.id.throttlePedal);
+            ThrottlePos = (TextView) findViewById(R.id.throttlePos);
+            OilPres = (TextView) findViewById(R.id.oilPres);
+            FuelPres = (TextView) findViewById(R.id.fuelPres);
+            Lambda = (TextView) findViewById(R.id.lambda);
+            TPMode = (TextView) findViewById(R.id.TpMode);
+            BattVolt = (TextView) findViewById(R.id.battVolt);
+            Bias = (TextView) findViewById(R.id.bias);
+            BPresPercent = (TextView) findViewById(R.id.brakePercent);
         } else if (id == R.id.nav_suspension) {
+            tab = 2;
             setContentView(R.layout.activity_suspension);
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
-            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
+//            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//            fab.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                            .setAction("Action", null).show();
+//                }
+//            });
 
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -226,18 +271,39 @@ public class MainActivity extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
+
+            Speed = (TextView) findViewById(R.id.speed);
+            Gear = (TextView) findViewById(R.id.gear);
+            RPM = (TextView) findViewById(R.id.rpm);
+            TPPercent = (TextView) findViewById(R.id.tp);
+            TpBar = (ProgressBar) findViewById(R.id.tpProgressBar);
+            BPresF = (TextView) findViewById(R.id.brakePercent);
+            BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
+            AirTemp = (TextView) findViewById(R.id.airTemp);
+            EngTemp = (TextView) findViewById(R.id.EngTemp);
+            OilTemp = (TextView) findViewById(R.id.OilTemp);
+            ThrottlePed = (TextView) findViewById(R.id.throttlePedal);
+            ThrottlePos = (TextView) findViewById(R.id.throttlePos);
+            OilPres = (TextView) findViewById(R.id.oilPres);
+            FuelPres = (TextView) findViewById(R.id.fuelPres);
+            Lambda = (TextView) findViewById(R.id.lambda);
+            TPMode = (TextView) findViewById(R.id.TpMode);
+            BattVolt = (TextView) findViewById(R.id.battVolt);
+            Bias = (TextView) findViewById(R.id.bias);
+            BPresPercent = (TextView) findViewById(R.id.brakePercent);
         } else if (id == R.id.nav_misc) {
+            tab = 3;
             setContentView(R.layout.activity_misc);        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
-            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
+//            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//            fab.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                            .setAction("Action", null).show();
+//                }
+//            });
 
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -247,18 +313,39 @@ public class MainActivity extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
+
+            Speed = (TextView) findViewById(R.id.speed);
+            Gear = (TextView) findViewById(R.id.gear);
+            RPM = (TextView) findViewById(R.id.rpm);
+            TPPercent = (TextView) findViewById(R.id.tp);
+            TpBar = (ProgressBar) findViewById(R.id.tpProgressBar);
+            BPresF = (TextView) findViewById(R.id.brakePercent);
+            BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
+            AirTemp = (TextView) findViewById(R.id.airTemp);
+            EngTemp = (TextView) findViewById(R.id.EngTemp);
+            OilTemp = (TextView) findViewById(R.id.OilTemp);
+            ThrottlePed = (TextView) findViewById(R.id.throttlePedal);
+            ThrottlePos = (TextView) findViewById(R.id.throttlePos);
+            OilPres = (TextView) findViewById(R.id.oilPres);
+            FuelPres = (TextView) findViewById(R.id.fuelPres);
+            Lambda = (TextView) findViewById(R.id.lambda);
+            TPMode = (TextView) findViewById(R.id.TpMode);
+            BattVolt = (TextView) findViewById(R.id.battVolt);
+            Bias = (TextView) findViewById(R.id.bias);
+            BPresPercent = (TextView) findViewById(R.id.brakePercent);
         } else if (id == R.id.nav_graph) {
+            tab = 4;
             setContentView(R.layout.activity_graph);        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
-            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
+//            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//            fab.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                            .setAction("Action", null).show();
+//                }
+//            });
 
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -268,6 +355,26 @@ public class MainActivity extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
+
+            Speed = (TextView) findViewById(R.id.speed);
+            Gear = (TextView) findViewById(R.id.gear);
+            RPM = (TextView) findViewById(R.id.rpm);
+            TPPercent = (TextView) findViewById(R.id.tp);
+            TpBar = (ProgressBar) findViewById(R.id.tpProgressBar);
+            BPresF = (TextView) findViewById(R.id.brakePercent);
+            BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
+            AirTemp = (TextView) findViewById(R.id.airTemp);
+            EngTemp = (TextView) findViewById(R.id.EngTemp);
+            OilTemp = (TextView) findViewById(R.id.OilTemp);
+            ThrottlePed = (TextView) findViewById(R.id.throttlePedal);
+            ThrottlePos = (TextView) findViewById(R.id.throttlePos);
+            OilPres = (TextView) findViewById(R.id.oilPres);
+            FuelPres = (TextView) findViewById(R.id.fuelPres);
+            Lambda = (TextView) findViewById(R.id.lambda);
+            TPMode = (TextView) findViewById(R.id.TpMode);
+            BattVolt = (TextView) findViewById(R.id.battVolt);
+            Bias = (TextView) findViewById(R.id.bias);
+            BPresPercent = (TextView) findViewById(R.id.brakePercent);
         } else if (id == R.id.nav_comms) {
 
         }
@@ -339,23 +446,72 @@ public class MainActivity extends AppCompatActivity
     private Runnable updateUI = new Runnable() {
         @Override
         public void run() {
-
-            Speed.setText(Integer.toString(dataStorage.getSpeed()));
-            Gear.setText(Integer.toString(dataStorage.getGear()));
-            RPM.setText(Double.toString(dataStorage.getRPM()));
-            TPPercent.setText(Integer.toString(dataStorage.getThrottlePos()));
-            ThrottlePos.setText(Integer.toString(dataStorage.getThrottlePos()));
-            BPresPercent.setText(Integer.toString((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100)));
-            IAT.setText(Integer.toString(dataStorage.getIAT()));
-            OilTemp.setText(Integer.toString(dataStorage.getOilTemp()));
-            EngTemp.setText(Integer.toString(dataStorage.getEngTemp()));
-            BattVolt.setText(Double.toString(dataStorage.getBattVolt()));
-            OilPres.setText(Integer.toString(dataStorage.getOilPres()));
-            FuelPres.setText(Integer.toString(dataStorage.getFuelPres()));
-            BPresF.setText(Double.toString(dataStorage.getBPresF() / 10));
-            Bias.setText(Integer.toString(dataStorage.getBias()));
-            TpBar.setProgress(dataStorage.getThrottlePos());
-            BPresBar.setProgress((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100));
+            switch(tab) {
+                case(0):
+                    Speed.setText(Integer.toString(dataStorage.getSpeed()));
+                    Gear.setText(Integer.toString(dataStorage.getGear()));
+                    RPM.setText(Double.toString(dataStorage.getRPM()));
+                    TPPercent.setText(Integer.toString(dataStorage.getThrottlePos()));
+                    BPresPercent.setText(Integer.toString((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100)));
+                    TpBar.setProgress(dataStorage.getThrottlePos());
+                    BPresBar.setProgress((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100));
+                    break;
+                case(1):
+                    Speed.setText(Integer.toString(dataStorage.getSpeed()));
+                    Gear.setText(Integer.toString(dataStorage.getGear()));
+                    RPM.setText(Double.toString(dataStorage.getRPM()));
+                    TPPercent.setText(Integer.toString(dataStorage.getThrottlePos()));
+                    ThrottlePos.setText(Integer.toString(dataStorage.getThrottlePos()));
+                    BPresPercent.setText(Integer.toString((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100)));
+                    AirTemp.setText(Integer.toString(dataStorage.getIAT()));
+                    OilTemp.setText(Integer.toString(dataStorage.getOilTemp()));
+                    EngTemp.setText(Integer.toString(dataStorage.getEngTemp()));
+                    BattVolt.setText(Double.toString(dataStorage.getBattVolt()));
+                    OilPres.setText(Integer.toString(dataStorage.getOilPres()));
+                    FuelPres.setText(Integer.toString(dataStorage.getFuelPres()));
+                    TpBar.setProgress(dataStorage.getThrottlePos());
+                    BPresBar.setProgress((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100));
+                    break;
+                case(2):
+                    Speed.setText(Integer.toString(dataStorage.getSpeed()));
+                    Gear.setText(Integer.toString(dataStorage.getGear()));
+                    RPM.setText(Double.toString(dataStorage.getRPM()));
+                    TPPercent.setText(Integer.toString(dataStorage.getThrottlePos()));
+                    BPresPercent.setText(Integer.toString((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100)));
+                    TpBar.setProgress(dataStorage.getThrottlePos());
+                    BPresBar.setProgress((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100));
+                    Bias.setText(Integer.toString(dataStorage.getBias()));
+                    break;
+                case(3):
+                    Speed.setText(Integer.toString(dataStorage.getSpeed()));
+                    Gear.setText(Integer.toString(dataStorage.getGear()));
+                    RPM.setText(Double.toString(dataStorage.getRPM()));
+                    TPPercent.setText(Integer.toString(dataStorage.getThrottlePos()));
+                    BPresPercent.setText(Integer.toString((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100)));
+                    TpBar.setProgress(dataStorage.getThrottlePos());
+                    BPresBar.setProgress((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100));
+                    break;
+                case(4):
+                    break;
+                default:
+                    break;
+            }
+//            Speed.setText(Integer.toString(dataStorage.getSpeed()));
+//            Gear.setText(Integer.toString(dataStorage.getGear()));
+//            RPM.setText(Double.toString(dataStorage.getRPM()));
+//            TPPercent.setText(Integer.toString(dataStorage.getThrottlePos()));
+//            ThrottlePos.setText(Integer.toString(dataStorage.getThrottlePos()));
+//            BPresPercent.setText(Integer.toString((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100)));
+//            IAT.setText(Integer.toString(dataStorage.getIAT()));
+//            OilTemp.setText(Integer.toString(dataStorage.getOilTemp()));
+//            EngTemp.setText(Integer.toString(dataStorage.getEngTemp()));
+//            BattVolt.setText(Double.toString(dataStorage.getBattVolt()));
+//            OilPres.setText(Integer.toString(dataStorage.getOilPres()));
+//            FuelPres.setText(Integer.toString(dataStorage.getFuelPres()));
+//            BPresF.setText(Double.toString(dataStorage.getBPresF() / 10));
+//            Bias.setText(Integer.toString(dataStorage.getBias()));
+//            TpBar.setProgress(dataStorage.getThrottlePos());
+//            BPresBar.setProgress((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100));
             dataUpdateHandler.post(this);
 
         }
