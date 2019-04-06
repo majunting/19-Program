@@ -20,10 +20,10 @@ public class GraphUpdate extends Fragment {
     private Runnable speedTimer;
     private Runnable tpTimer;
     private Runnable brakeTimer;
-    private LineGraphSeries<DataPoint> rpmSeries;
-    private LineGraphSeries<DataPoint> speedSeries;
-    private LineGraphSeries<DataPoint> tpSeries;
-    private LineGraphSeries<DataPoint> brakeSeries;
+    public LineGraphSeries<DataPoint> rpmSeries = new LineGraphSeries<>();
+    public LineGraphSeries<DataPoint> speedSeries = new LineGraphSeries<>();
+    public LineGraphSeries<DataPoint> tpSeries = new LineGraphSeries<>();
+    public LineGraphSeries<DataPoint> brakeSeries = new LineGraphSeries<>();
     private double graph1LastXValue = 0d;
     private double graph2LastXValue = 0d;
     private double graph3LastXValue = 0d;
@@ -41,28 +41,28 @@ public class GraphUpdate extends Fragment {
         graph1.addSeries(rpmSeries);
         graph1.getViewport().setXAxisBoundsManual(true);
         graph1.getViewport().setMinX(0);
-        graph1.getViewport().setMaxX(500);
+        graph1.getViewport().setMaxX(5000);
 
         GraphView graph2 = (GraphView) rootView.findViewById(R.id.Graph2);
         speedSeries = new LineGraphSeries<>();
         graph2.addSeries(speedSeries);
         graph2.getViewport().setXAxisBoundsManual(true);
         graph2.getViewport().setMinX(0);
-        graph2.getViewport().setMaxX(500);
+        graph2.getViewport().setMaxX(5000);
 
         GraphView graph3 = (GraphView) rootView.findViewById(R.id.Graph3);
         tpSeries = new LineGraphSeries<>();
         graph3.addSeries(tpSeries);
         graph3.getViewport().setXAxisBoundsManual(true);
         graph3.getViewport().setMinX(0);
-        graph3.getViewport().setMaxX(500);
+        graph3.getViewport().setMaxX(5000);
 
         GraphView graph4 = (GraphView) rootView.findViewById(R.id.Graph4);
         brakeSeries = new LineGraphSeries<>();
         graph4.addSeries(brakeSeries);
         graph4.getViewport().setXAxisBoundsManual(true);
         graph4.getViewport().setMinX(0);
-        graph4.getViewport().setMaxX(500);
+        graph4.getViewport().setMaxX(5000);
 
         return rootView;
     }
@@ -82,40 +82,40 @@ public class GraphUpdate extends Fragment {
             public void run() {
                 graph1LastXValue += 1d;
                 rpmSeries.appendData(new DataPoint(graph1LastXValue, mDataStorage.getRPM()), true, 50);
-                mHandler.postDelayed(this, 200);
+                mHandler.postDelayed(this, 20);
             }
         };
-        mHandler.postDelayed(rpmTimer, 300);
+        mHandler.postDelayed(rpmTimer, 30);
 
         speedTimer = new Runnable() {
             @Override
             public void run() {
                 graph2LastXValue += 1d;
                 speedSeries.appendData(new DataPoint(graph2LastXValue, mDataStorage.getSpeed()), true, 50);
-                mHandler.postDelayed(this, 200);
+                mHandler.postDelayed(this, 20);
             }
         };
-        mHandler.postDelayed(speedTimer, 300);
+        mHandler.postDelayed(speedTimer, 30);
 
         tpTimer = new Runnable() {
             @Override
             public void run() {
                 graph3LastXValue += 1d;
                 tpSeries.appendData(new DataPoint(graph3LastXValue, mDataStorage.getThrottlePos()), true, 50);
-                mHandler.postDelayed(this, 200);
+                mHandler.postDelayed(this, 20);
             }
         };
-        mHandler.postDelayed(tpTimer, 300);
+        mHandler.postDelayed(tpTimer, 30);
 
         brakeTimer = new Runnable() {
             @Override
             public void run() {
                 graph4LastXValue += 1d;
                 brakeSeries.appendData(new DataPoint(graph4LastXValue, mDataStorage.getBPresF()), true, 50);
-                mHandler.postDelayed(this, 200);
+                mHandler.postDelayed(this, 20);
             }
         };
-        mHandler.postDelayed(brakeTimer, 300);
+        mHandler.postDelayed(brakeTimer, 30);
     }
 
     @Override
@@ -125,6 +125,17 @@ public class GraphUpdate extends Fragment {
         mHandler.removeCallbacks(tpTimer);
         mHandler.removeCallbacks(brakeTimer);
         super.onPause();
+    }
+
+    public void updateData(int Speed, double RPM, int TP, double brake) {
+        graph1LastXValue += 1d;
+        graph2LastXValue += 1d;
+        graph3LastXValue += 1d;
+        graph4LastXValue += 1d;
+        rpmSeries.appendData(new DataPoint(graph1LastXValue, RPM), true, 50);
+        speedSeries.appendData(new DataPoint(graph2LastXValue, Speed), true, 50);
+        tpSeries.appendData(new DataPoint(graph3LastXValue, TP), true, 50);
+        brakeSeries.appendData(new DataPoint(graph4LastXValue, brake), true, 50);
     }
 
 //    private DataPoint[] generateData() {

@@ -33,4 +33,6 @@
     <string name="labelLatG">Lateral G</string>
     <string name="labelLongG">Long G</string>
     <string name="labelIAT">Air Temp</string>
+    <string name="labelBrakePres">Brake Pres</string>
+    <string name="labelBrakeTemp">Brake Temp</string>
 </resources>

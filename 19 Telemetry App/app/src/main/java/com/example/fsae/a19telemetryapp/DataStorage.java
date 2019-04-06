@@ -27,6 +27,12 @@ public class DataStorage {
     private static int OilPres;
     private static int Bias;
     private static int IAT;
+    private static int damperFL;
+    private static int damperFR;
+    private static int damperRL;
+    private static int damperRR;
+    private static double latG;
+    private static double longG;
     private static double RPM;
     private static double Lambda;
     private static double FuelAim;
@@ -38,7 +44,7 @@ public class DataStorage {
 
     public DataStorage() {
         Speed = 20;
-        ThrottlePos = 40;
+        ThrottlePos = 0;
         ThrottlePed = 40;
         BPresF = 0;
         BPresR = 0;
@@ -55,6 +61,12 @@ public class DataStorage {
         Lambda = 0.86;
         FuelAim = 0.86;
         BattVolt = 13.2;
+        latG = 0.0;
+        longG = 0.0;
+        damperFL = 22;
+        damperFR = 21;
+        damperRL = 33;
+        damperRR = 32;
         Auto = false;
         Clutch = false;
         Launch = false;
@@ -197,6 +209,30 @@ public class DataStorage {
         }
     }
 
+    public int getDamperFL() {
+        synchronized (lock4) {
+            return damperFL;
+        }
+    }
+
+    public int getDamperFR() {
+        synchronized (lock4) {
+            return damperFR;
+        }
+    }
+
+    public int getDamperRL() {
+        synchronized (lock4) {
+            return damperRL;
+        }
+    }
+
+    public int getDamperRR() {
+        synchronized (lock4) {
+            return damperRR;
+        }
+    }
+
     public double getRPM() {
         synchronized (lock1) {
             return RPM;
@@ -212,6 +248,24 @@ public class DataStorage {
     public double getFuelAim() {
         synchronized (lock3) {
             return FuelAim;
+        }
+    }
+
+    public double getLambdaDiff() {
+        synchronized (lock3) {
+            return Lambda - FuelAim;
+        }
+    }
+
+    public double getLatG() {
+        synchronized (lock4) {
+            return latG;
+        }
+    }
+
+    public double getLongG() {
+        synchronized (lock4) {
+            return longG;
         }
     }
 

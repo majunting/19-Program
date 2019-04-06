@@ -378,29 +378,23 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                    <!--<TextView-->
-                        <!--android:id="@+id/damperRR"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:text="33"-->
-                        <!--android:textSize="@dimen/dataTextSize" />-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:text="mm"-->
-                        <!--android:textSize="@dimen/unitSize" />-->
+                    <TextView
+                        android:id="@+id/BrakePres"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.2"
+                        android:textSize="@dimen/dataTextSize" />
 
                 </LinearLayout>
 
-                <!--<TextView-->
-                    <!--android:id="@+id/labeldamperRR"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center"-->
-                    <!--android:layout_marginBottom="@dimen/labelTextMargin"-->
-                    <!--android:text="@string/labelDamperRR"-->
-                    <!--android:textSize="@dimen/labelTextSize" />-->
+                <TextView
+                    android:id="@+id/labelBrakePres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/labelTextMargin"
+                    android:text="@string/labelBrakePres"
+                    android:textSize="@dimen/labelTextSize" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -427,21 +421,21 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                    <!--<TextView-->
-                        <!--android:id="@+id/LongG"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:text="0.74"-->
-                        <!--android:textSize="@dimen/TextSizeSmall" />-->
+                    <TextView
+                        android:id="@+id/BrakeTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="153"
+                        android:textSize="@dimen/dataTextSize" />
                 </LinearLayout>
 
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center"-->
-                    <!--android:layout_marginBottom="@dimen/labelTextMargin"-->
-                    <!--android:text="@string/labelLongG"-->
-                    <!--android:textSize="@dimen/labelTextSize" />-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/labelTextMargin"
+                    android:text="@string/labelBrakeTemp"
+                    android:textSize="@dimen/labelTextSize" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>

@@ -18,6 +18,8 @@ import android.view.MenuItem;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.jjoe64.graphview.GraphView;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity
     private TextView ThrottlePed;
     private TextView BPresF;
     private TextView BPresR;
+    private TextView BrakePercent;
     private TextView BPresPercent;
     private TextView BTempF;
     private TextView BTempR;
@@ -60,7 +63,14 @@ public class MainActivity extends AppCompatActivity
     private TextView RPM;
     private TextView Lambda;
     private TextView FuelAim;
+    private TextView LambdaDiff;
     private TextView BattVolt;
+    private TextView DamperFL;
+    private TextView DamperFR;
+    private TextView DamperRL;
+    private TextView DamperRR;
+    private TextView LatG;
+    private TextView LongG;
     private TextView Auto;
     private TextView Clutch;
     private TextView Launch;
@@ -68,6 +78,11 @@ public class MainActivity extends AppCompatActivity
     private TextView TPMode;
     private ProgressBar TpBar;
     private ProgressBar BPresBar;
+
+    private GraphView graph1;
+    private GraphView graph2;
+    private GraphView graph3;
+    private GraphView graph4;
 
     private int tab = 0;
 
@@ -101,7 +116,7 @@ public class MainActivity extends AppCompatActivity
         RPM = (TextView) findViewById(R.id.rpm);
         TPPercent = (TextView) findViewById(R.id.tp);
         TpBar = (ProgressBar) findViewById(R.id.tpProgressBar);
-        BPresF = (TextView) findViewById(R.id.brakePercent);
+//        BrakePercent = (TextView) findViewById(R.id.brakePercent);
         BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
         AirTemp = (TextView) findViewById(R.id.airTemp);
         EngTemp = (TextView) findViewById(R.id.EngTemp);
@@ -115,7 +130,21 @@ public class MainActivity extends AppCompatActivity
         BattVolt = (TextView) findViewById(R.id.battVolt);
         Bias = (TextView) findViewById(R.id.bias);
         BPresPercent = (TextView) findViewById(R.id.brakePercent);
+        DamperFL = (TextView) findViewById(R.id.damperFL);
+        DamperFR = (TextView) findViewById(R.id.damperFR);
+        DamperRL = (TextView) findViewById(R.id.damperRL);
+        DamperRR = (TextView) findViewById(R.id.damperRR);
+        LatG = (TextView) findViewById(R.id.LatG);
+        LongG = (TextView) findViewById(R.id.LongG);
+        LambdaDiff = (TextView) findViewById(R.id.lambda);
+        ThrottlePed = (TextView) findViewById(R.id.throttlePedal);
+        BPresF = (TextView) findViewById(R.id.BrakePres);
+        BTempF = (TextView) findViewById(R.id.BrakeTemp);
 
+        graph1 = (GraphView) findViewById(R.id.Graph1);
+        graph2 = (GraphView) findViewById(R.id.Graph2);
+        graph3 = (GraphView) findViewById(R.id.Graph3);
+        graph4 = (GraphView) findViewById(R.id.Graph4);
 
         initializeUdpListener();
         dataUpdateHandler = new Handler();
@@ -191,7 +220,7 @@ public class MainActivity extends AppCompatActivity
             RPM = (TextView) findViewById(R.id.rpm);
             TPPercent = (TextView) findViewById(R.id.tp);
             TpBar = (ProgressBar) findViewById(R.id.tpProgressBar);
-            BPresF = (TextView) findViewById(R.id.brakePercent);
+//            BrakePercent = (TextView) findViewById(R.id.brakePercent);
             BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
             AirTemp = (TextView) findViewById(R.id.airTemp);
             EngTemp = (TextView) findViewById(R.id.EngTemp);
@@ -205,6 +234,16 @@ public class MainActivity extends AppCompatActivity
             BattVolt = (TextView) findViewById(R.id.battVolt);
             Bias = (TextView) findViewById(R.id.bias);
             BPresPercent = (TextView) findViewById(R.id.brakePercent);
+            DamperFL = (TextView) findViewById(R.id.damperFL);
+            DamperFR = (TextView) findViewById(R.id.damperFR);
+            DamperRL = (TextView) findViewById(R.id.damperRL);
+            DamperRR = (TextView) findViewById(R.id.damperRR);
+            LatG = (TextView) findViewById(R.id.LatG);
+            LongG = (TextView) findViewById(R.id.LongG);
+            LambdaDiff = (TextView) findViewById(R.id.lambda);
+            ThrottlePed = (TextView) findViewById(R.id.throttlePedal);
+            BPresF = (TextView) findViewById(R.id.BrakePres);
+            BTempF = (TextView) findViewById(R.id.BrakeTemp);
         } else if (id == R.id.nav_engine) {
             tab = 1;
             setContentView(R.layout.activity_engine);
@@ -234,7 +273,7 @@ public class MainActivity extends AppCompatActivity
             RPM = (TextView) findViewById(R.id.rpm);
             TPPercent = (TextView) findViewById(R.id.tp);
             TpBar = (ProgressBar) findViewById(R.id.tpProgressBar);
-            BPresF = (TextView) findViewById(R.id.brakePercent);
+//            BrakePercent = (TextView) findViewById(R.id.brakePercent);
             BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
             AirTemp = (TextView) findViewById(R.id.airTemp);
             EngTemp = (TextView) findViewById(R.id.EngTemp);
@@ -248,6 +287,16 @@ public class MainActivity extends AppCompatActivity
             BattVolt = (TextView) findViewById(R.id.battVolt);
             Bias = (TextView) findViewById(R.id.bias);
             BPresPercent = (TextView) findViewById(R.id.brakePercent);
+            DamperFL = (TextView) findViewById(R.id.damperFL);
+            DamperFR = (TextView) findViewById(R.id.damperFR);
+            DamperRL = (TextView) findViewById(R.id.damperRL);
+            DamperRR = (TextView) findViewById(R.id.damperRR);
+            LatG = (TextView) findViewById(R.id.LatG);
+            LongG = (TextView) findViewById(R.id.LongG);
+            LambdaDiff = (TextView) findViewById(R.id.lambda);
+            ThrottlePed = (TextView) findViewById(R.id.throttlePedal);
+            BPresF = (TextView) findViewById(R.id.BrakePres);
+            BTempF = (TextView) findViewById(R.id.BrakeTemp);
         } else if (id == R.id.nav_suspension) {
             tab = 2;
             setContentView(R.layout.activity_suspension);
@@ -277,7 +326,7 @@ public class MainActivity extends AppCompatActivity
             RPM = (TextView) findViewById(R.id.rpm);
             TPPercent = (TextView) findViewById(R.id.tp);
             TpBar = (ProgressBar) findViewById(R.id.tpProgressBar);
-            BPresF = (TextView) findViewById(R.id.brakePercent);
+//            BrakePercent = (TextView) findViewById(R.id.brakePercent);
             BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
             AirTemp = (TextView) findViewById(R.id.airTemp);
             EngTemp = (TextView) findViewById(R.id.EngTemp);
@@ -291,6 +340,16 @@ public class MainActivity extends AppCompatActivity
             BattVolt = (TextView) findViewById(R.id.battVolt);
             Bias = (TextView) findViewById(R.id.bias);
             BPresPercent = (TextView) findViewById(R.id.brakePercent);
+            DamperFL = (TextView) findViewById(R.id.damperFL);
+            DamperFR = (TextView) findViewById(R.id.damperFR);
+            DamperRL = (TextView) findViewById(R.id.damperRL);
+            DamperRR = (TextView) findViewById(R.id.damperRR);
+            LatG = (TextView) findViewById(R.id.LatG);
+            LongG = (TextView) findViewById(R.id.LongG);
+            LambdaDiff = (TextView) findViewById(R.id.lambda);
+            ThrottlePed = (TextView) findViewById(R.id.throttlePedal);
+            BPresF = (TextView) findViewById(R.id.BrakePres);
+            BTempF = (TextView) findViewById(R.id.BrakeTemp);
         } else if (id == R.id.nav_misc) {
             tab = 3;
             setContentView(R.layout.activity_misc);        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -319,7 +378,7 @@ public class MainActivity extends AppCompatActivity
             RPM = (TextView) findViewById(R.id.rpm);
             TPPercent = (TextView) findViewById(R.id.tp);
             TpBar = (ProgressBar) findViewById(R.id.tpProgressBar);
-            BPresF = (TextView) findViewById(R.id.brakePercent);
+//            BrakePercent = (TextView) findViewById(R.id.brakePercent);
             BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
             AirTemp = (TextView) findViewById(R.id.airTemp);
             EngTemp = (TextView) findViewById(R.id.EngTemp);
@@ -333,6 +392,16 @@ public class MainActivity extends AppCompatActivity
             BattVolt = (TextView) findViewById(R.id.battVolt);
             Bias = (TextView) findViewById(R.id.bias);
             BPresPercent = (TextView) findViewById(R.id.brakePercent);
+            DamperFL = (TextView) findViewById(R.id.damperFL);
+            DamperFR = (TextView) findViewById(R.id.damperFR);
+            DamperRL = (TextView) findViewById(R.id.damperRL);
+            DamperRR = (TextView) findViewById(R.id.damperRR);
+            LatG = (TextView) findViewById(R.id.LatG);
+            LongG = (TextView) findViewById(R.id.LongG);
+            LambdaDiff = (TextView) findViewById(R.id.lambda);
+            ThrottlePed = (TextView) findViewById(R.id.throttlePedal);
+            BPresF = (TextView) findViewById(R.id.BrakePres);
+            BTempF = (TextView) findViewById(R.id.BrakeTemp);
         } else if (id == R.id.nav_graph) {
             tab = 4;
             setContentView(R.layout.activity_graph);        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -361,7 +430,7 @@ public class MainActivity extends AppCompatActivity
             RPM = (TextView) findViewById(R.id.rpm);
             TPPercent = (TextView) findViewById(R.id.tp);
             TpBar = (ProgressBar) findViewById(R.id.tpProgressBar);
-            BPresF = (TextView) findViewById(R.id.brakePercent);
+            BrakePercent = (TextView) findViewById(R.id.brakePercent);
             BPresBar = (ProgressBar) findViewById(R.id.brakeProgressBar);
             AirTemp = (TextView) findViewById(R.id.airTemp);
             EngTemp = (TextView) findViewById(R.id.EngTemp);
@@ -375,6 +444,42 @@ public class MainActivity extends AppCompatActivity
             BattVolt = (TextView) findViewById(R.id.battVolt);
             Bias = (TextView) findViewById(R.id.bias);
             BPresPercent = (TextView) findViewById(R.id.brakePercent);
+            DamperFL = (TextView) findViewById(R.id.damperFL);
+            DamperFR = (TextView) findViewById(R.id.damperFR);
+            DamperRL = (TextView) findViewById(R.id.damperRL);
+            DamperRR = (TextView) findViewById(R.id.damperRR);
+            LatG = (TextView) findViewById(R.id.LatG);
+            LongG = (TextView) findViewById(R.id.LongG);
+            LambdaDiff = (TextView) findViewById(R.id.lambda);
+            ThrottlePed = (TextView) findViewById(R.id.throttlePedal);
+            BPresF = (TextView) findViewById(R.id.BrakePres);
+            BTempF = (TextView) findViewById(R.id.BrakeTemp);
+
+            graph1 = (GraphView) findViewById(R.id.Graph1);
+            graph2 = (GraphView) findViewById(R.id.Graph2);
+            graph3 = (GraphView) findViewById(R.id.Graph3);
+            graph4 = (GraphView) findViewById(R.id.Graph4);
+
+            graph1.addSeries(mGraph.rpmSeries);
+            graph1.getViewport().setXAxisBoundsManual(true);
+            graph1.getViewport().setMinX(0);
+            graph1.getViewport().setMaxX(500);
+
+            graph2.addSeries(mGraph.speedSeries);
+            graph2.getViewport().setXAxisBoundsManual(true);
+            graph2.getViewport().setMinX(0);
+            graph2.getViewport().setMaxX(500);
+
+            graph3.addSeries(mGraph.tpSeries);
+            graph3.getViewport().setXAxisBoundsManual(true);
+            graph3.getViewport().setMinX(0);
+            graph3.getViewport().setMaxX(500);
+
+            graph4.addSeries(mGraph.brakeSeries);
+            graph4.getViewport().setXAxisBoundsManual(true);
+            graph4.getViewport().setMinX(0);
+            graph4.getViewport().setMaxX(500);
+
         } else if (id == R.id.nav_comms) {
 
         }
@@ -471,6 +576,8 @@ public class MainActivity extends AppCompatActivity
                     FuelPres.setText(Integer.toString(dataStorage.getFuelPres()));
                     TpBar.setProgress(dataStorage.getThrottlePos());
                     BPresBar.setProgress((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100));
+                    LambdaDiff.setText(Double.toString(dataStorage.getLambdaDiff()));
+                    ThrottlePed.setText(Integer.toString(dataStorage.getThrottlePed()));
                     break;
                 case(2):
                     Speed.setText(Integer.toString(dataStorage.getSpeed()));
@@ -481,6 +588,10 @@ public class MainActivity extends AppCompatActivity
                     TpBar.setProgress(dataStorage.getThrottlePos());
                     BPresBar.setProgress((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100));
                     Bias.setText(Integer.toString(dataStorage.getBias()));
+                    LatG.setText(Double.toString(dataStorage.getLatG()));
+                    LongG.setText(Double.toString(dataStorage.getLongG()));
+                    BPresF.setText(Double.toString(dataStorage.getBPresF()/10));
+                    BTempF.setText(Integer.toString(dataStorage.getBTempF()));
                     break;
                 case(3):
                     Speed.setText(Integer.toString(dataStorage.getSpeed()));
@@ -492,6 +603,8 @@ public class MainActivity extends AppCompatActivity
                     BPresBar.setProgress((int) (dataStorage.getBPresF() / MAX_BRAKE_PRESSURE * 100));
                     break;
                 case(4):
+                    mGraph.updateData(dataStorage.getSpeed(), dataStorage.getRPM(), dataStorage.getThrottlePos(), dataStorage.getBPresF());
+//                    mGraph.onResume();
                     break;
                 default:
                     break;
